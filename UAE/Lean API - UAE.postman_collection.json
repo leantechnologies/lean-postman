@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "31af5e1a-b5ca-42b0-818c-cc821b4f81f4",
+    "_postman_id": "0d7edd48-00c6-4f3e-a3b5-cdd8a2d21e51",
     "name": "Lean API - UAE",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "19307496"
+    "_exporter_id": "48096870"
   },
   "item": [
     {
@@ -7792,7 +7792,205 @@
     },
     {
       "name": "Payouts",
-      "item": []
+      "item": [
+        {
+          "name": "Create Payout Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"payment_details\": [\n        {\n            \"account_id\": \"{{payouts_account_id}}\",\n            \"currency\": \"AED\",\n            \"destination_details\": [\n                {\n                    \"authorize_payment\": false, \n                    \"payment_destination_id\": \"{{payouts_destination_id}}\",\n                    \"amount\": 15,\n                    \"description\": \"test payment\"\n                }\n            ]\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/payouts/v1/payment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payouts",
+                "v1",
+                "payment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Payouts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/payouts/v1/payments?page_number=0&page_size=50",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payouts",
+                "v1",
+                "payments"
+              ],
+              "query": [
+                {
+                  "key": "page_number",
+                  "value": "0"
+                },
+                {
+                  "key": "page_size",
+                  "value": "50"
+                }
+              ]
+            },
+            "description": "Generated from cURL: curl --request GET \\\n     --url 'https://api.leantech.me/payouts/v1/payments?page_number=0&page_size=50' \\\n     --header 'accept: application/json'"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Payouts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/payouts/v1/{{paymentId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payouts",
+                "v1",
+                "{{paymentId}}"
+              ]
+            },
+            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/payment_id \\\n     --header 'accept: application/json'"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Payout Intent",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/payouts/v1/intents/{{payment_intent_id}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payouts",
+                "v1",
+                "intents",
+                "{{payment_intent_id}}"
+              ]
+            },
+            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/intents/payment_intent_id \\\n     --header 'accept: application/json'"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Payouts Destination(s)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"bank_identifier\": \"LEAN_SME_MB1_KSA\",\n        \"name\": \"Santiago Keebler\",\n        \"iban\": \"SA0080000000123456789012\",\n        \"display_name\": \"ABC CORP\",\n        \"account_number\": \"0303030\",\n        \"swift_code\": \"RJHISARI\",\n        \"address\": \"Texas Wisokystead Wayne County 802 Washington Street Apt. 205\",\n        \"branch_address\": \"Idaho East Elmore Marion County 59966 E 4th Avenue Suite 288\",\n        \"country\": \"SAU\",\n        \"city\": \"Riyadh\",\n        \"customer_id\": \"ec4783e4-b92c-41f3-95c1-18d6f3acb0ae\",\n        \"currency_iso_code\": \"SAR\",\n        \"postal_code\": \"90710\"\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/payouts/v1/payment/destinations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payouts",
+                "v1",
+                "payment",
+                "destinations"
+              ]
+            },
+            "description": "Generated from cURL: curl --request POST \\\n     --url https://api.leantech.me/payouts/v1/payment/destinations \\\n     --header 'accept: application/json' \\\n     --header 'content-type: application/json' \\\n     --data '\n[\n  {\n    \"bank_identifier\": \"LEAN_SME_MB1_UAE\",\n    \"name\": \"Santiago Keebler\",\n    \"iban\": \"AE123030303000\",\n    \"display_name\": \"ABC CORP\",\n    \"account_number\": \"0303030\",\n    \"swift_code\": \"UCHZPL2OXXX\",\n    \"ifsc\": \"HADBC0001234\",\n    \"sort_code\": \"89\",\n    \"routing_number\": \"106519958\",\n    \"transit_code\": \"9\",\n    \"address\": \"Texas Wisokystead Wayne County 802 Washington Street Apt. 205\",\n    \"branch_address\": \"Idaho East Elmore Marion County 59966 E 4th Avenue Suite 288\",\n    \"country\": \"ARE\",\n    \"city\": \"Abu Dhabi\",\n    \"customer_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"currency_iso_code\": \"AED\",\n    \"postal_code\": \"90710\"\n  }\n]\n'"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Payouts Destination",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/payouts/v1/payment/destinations/{{destination_id}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payouts",
+                "v1",
+                "payment",
+                "destinations",
+                "{{destination_id}}"
+              ]
+            },
+            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/payment/destinations/destination_id \\\n     --header 'accept: application/json'"
+          },
+          "response": []
+        }
+      ]
     },
     {
       "name": "Payments",
@@ -7852,7 +8050,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "",
+              "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [
                 {
