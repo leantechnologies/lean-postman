@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "9e732db4-2041-4847-8225-39b26be6b917",
+    "_postman_id": "31af5e1a-b5ca-42b0-818c-cc821b4f81f4",
     "name": "Lean API - UAE",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "32824512"
+    "_exporter_id": "19307496"
   },
   "item": [
     {
@@ -379,7 +379,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -528,7 +528,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -661,7 +661,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -792,7 +792,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -952,7 +952,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -1088,7 +1088,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -1262,7 +1262,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -4498,29 +4498,29 @@
                           ],
                           "query": [
                             {
-                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**",
                               "key": "async",
-                              "value": "false"
+                              "value": "false",
+                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**"
                             },
                             {
-                              "description": "The page you're requesting - returns page 0 of a response if not specified.",
                               "key": "page",
-                              "value": "0"
+                              "value": "0",
+                              "description": "The page you're requesting - returns page 0 of a response if not specified."
                             },
                             {
-                              "description": "The number of objects you want to return as a page size.",
                               "key": "size",
-                              "value": "50"
+                              "value": "50",
+                              "description": "The number of objects you want to return as a page size."
                             },
                             {
-                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function.",
                               "key": "entity_id",
-                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3"
+                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3",
+                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function."
                             },
                             {
-                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}",
                               "key": "meta",
-                              "value": "string"
+                              "value": "string",
+                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}"
                             }
                           ],
                           "variable": [
@@ -4904,7 +4904,7 @@
                       },
                       "status": "OK",
                       "code": 200,
-                      "_postman_previewlanguage": null,
+                      "_postman_previewlanguage": "Text",
                       "header": [
                         {
                           "key": ":status",
@@ -5469,7 +5469,7 @@
                       },
                       "status": "OK",
                       "code": 200,
-                      "_postman_previewlanguage": null,
+                      "_postman_previewlanguage": "Text",
                       "header": [
                         {
                           "key": ":status",
@@ -5782,29 +5782,29 @@
                           ],
                           "query": [
                             {
-                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**",
                               "key": "async",
-                              "value": "false"
+                              "value": "false",
+                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**"
                             },
                             {
-                              "description": "The page you're requesting - returns page 0 of a response if not specified.",
                               "key": "page",
-                              "value": "0"
+                              "value": "0",
+                              "description": "The page you're requesting - returns page 0 of a response if not specified."
                             },
                             {
-                              "description": "The number of objects you want to return as a page size.",
                               "key": "size",
-                              "value": "50"
+                              "value": "50",
+                              "description": "The number of objects you want to return as a page size."
                             },
                             {
-                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function.",
                               "key": "entity_id",
-                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3"
+                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3",
+                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function."
                             },
                             {
-                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}",
                               "key": "meta",
-                              "value": "string"
+                              "value": "string",
+                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}"
                             }
                           ],
                           "variable": [
@@ -6174,7 +6174,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -6339,7 +6339,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -6465,7 +6465,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -6591,7 +6591,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -6762,7 +6762,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -6932,7 +6932,7 @@
                       },
                       "status": "OK",
                       "code": 200,
-                      "_postman_previewlanguage": null,
+                      "_postman_previewlanguage": "Text",
                       "header": [
                         {
                           "key": ":status",
@@ -7094,7 +7094,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -7214,7 +7214,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -7340,7 +7340,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -7466,7 +7466,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -7796,7 +7796,76 @@
     },
     {
       "name": "Payments",
-      "item": []
+      "item": [
+        {
+          "name": "Create Payment Intent",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n        \"amount\": {{payment_amount}},\n        \"currency\": \"AED\",\n        \"payment_destination_id\": \"{{destination_id}}\",\n        \"customer_id\": \"{{customer_id}}\",\n        \"description\": \"{{payment_description}}\", //optional\n        \"purpose_code\": \"FIS\"\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/payments/v1/intents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payments",
+                "v1",
+                "intents"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Payment Intent",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n        \"amount\": {{payment_amount}},\n        \"currency\": \"AED\",\n        \"payment_destination_id\": \"{{destination_id}}\",\n        \"customer_id\": \"{{customer_id}}\",\n        \"description\": \"{{payment_description}}\", //optional\n        \"purpose_code\": \"FIS\"\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/payments/v1/intents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments",
+                    "v1",
+                    "intents"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"payment_intent_id\": \"2b0f9a59-c2f0-4d3b-b06b-20dd76084b94\",\n    \"customer_id\": \"fe158075-97f9-4e30-a8b9-641597b689d6\",\n    \"amount\": 5.00,\n    \"currency\": \"AED\",\n    \"description\": \"demo payment\",\n    \"payments\": [],\n    \"payment_destination\": {\n        \"id\": \"a9a9d921-5512-4bec-bda4-8909299afcc2\",\n        \"bank_identifier\": \"DIB_UAE\",\n        \"name\": \"Joseph Patrick Goddard\",\n        \"iban\": \"AE910240001523279032202\",\n        \"display_name\": \"Joseph Patrick Goddard\",\n        \"account_number\": \"1523279032202\",\n        \"swift_code\": \"DUIBAEADXXX\",\n        \"status\": \"CONFIRMED\",\n        \"address\": \"Marina\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"default\": false,\n        \"owner_type\": \"APPLICATION\",\n        \"branch_address\": \"JOE_DIB_UAE\",\n        \"currency_iso_code\": \"AED\",\n        \"confirmation_of_payee_status\": \"MATCH\",\n        \"bank_type\": \"RETAIL\"\n    },\n    \"created_at\": null,\n    \"updated_at\": null\n}"
+            }
+          ]
+        }
+      ]
     }
   ],
   "auth": {
@@ -7873,6 +7942,19 @@
     {
       "key": "customer_access_token",
       "value": ""
+    },
+    {
+      "key": "payment_destination_id",
+      "value": ""
+    },
+    {
+      "key": "payment_amount",
+      "value": ""
+    },
+    {
+      "key": "payment_description",
+      "value": "",
+      "type": "default"
     }
   ]
 }
