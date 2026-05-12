@@ -1,0 +1,11 @@
+target
+*.iml
+*.jar
+*.class
+.idea
+.project
+.classpath
+.settings/
+.DS_Store
+.checkstyle
+/.claude/**
