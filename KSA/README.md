@@ -8,11 +8,11 @@ Lean is a financial data connectivity platform that lets your application access
 
 The typical journey is:
 
-1. **Authenticate** — get an API access token from Lean's OAuth server.
+1. **Authenticate** — get an **API access token** from Lean's OAuth server for backend calls. When you're about to connect a specific user's bank, also get a **Customer access token** scoped to that customer for the LinkSDK / entity connection step.
 2. **Create a Customer** — register the end user in Lean.
 3. **Connect an Entity** — the customer links a bank through the LinkSDK; Lean creates an *entity* and notifies you by webhook (`entity.created`).
-4. **Consent** — the customer authorizes specific permissions and date ranges on Lean's (or your own) consent screen.
-5. **Fetch Data** — call the Raw Data v2 endpoints with the `entity_id` (and `account_id` where required).
+4. **Consent** — your app shows Lean's (or your own) SAMA‑compliant consent screen; the end user authorizes specific permissions and date ranges before any data flows.
+5. **Fetch Data** — call the Raw Data v2 endpoints with the `entity_id` (and `account_id` where required) using the API access token.
 6. **Refresh / Verify** — optionally trigger data refreshes or run verification APIs (IBAN, business, freelancer, beneficiary name).
 
 See the full docs: [Overview](https://docs.leantech.me/v2.0-KSA/docs/overview) · [Creating a Customer](https://docs.leantech.me/v2.0-KSA/docs/creating-a-customer) · [Creating an Entity](https://docs.leantech.me/v2.0-KSA/docs/creating-an-entity) · [The Consent](https://docs.leantech.me/v2.0-KSA/docs/explaining-the-consent) · [Getting Started with Data](https://docs.leantech.me/v2.0-KSA/docs/getting-started-with-data).
@@ -29,14 +29,14 @@ Set the collection variables (`client_id`, `client_secret`, `baseUrl`, `auth_bas
 
 Token endpoints used by every other call. Run one of these first; the returned `access_token` is plugged into the `Authorization: Bearer` header of subsequent requests.
 
-- **POST Generate API Access Token** — Server‑to‑server token used for almost all backend calls (customers, entities, data, verifications).
-- **POST Generate Customer Access Token** — Customer‑scoped token used when the LinkSDK or another client acts on behalf of a single customer.
+- **POST Generate API Access Token** — The **API access token** used for almost all backend calls (customers, entities, data, verifications). Valid for one hour — call it once per hour and reuse it across all requests, regardless of how many users you're working with.
+- **POST Generate Customer Access Token** — The **Customer access token**, scoped to a single customer. Used only by the LinkSDK to connect an entity, not for data calls.
 
 ### Customers
 
 A *Customer* is the foundational object representing one of your end users inside Lean. It must exist before any entity, consent, or data call.
 
-- **POST Create Customer** — Registers a new customer with your `app_user_id`. Lean returns a `customer_id` to store on your side.
+- **POST Create Customer** — Registers a new customer with your `app_user_id`. Lean returns a `customer_id` to store on your side. Authenticate this call with the **API access token**; the `customer_id` returned here is what you'll later use to mint a **Customer access token** for the LinkSDK.
 - **GET List Customers** — Paginated list of all customers under your application. Useful for sanity checks during development.
 - **GET Get Customer by app_user_id** — Looks up a customer using the identifier you assigned.
 - **GET Get Customer by ID** — Looks up a customer using Lean's `customer_id`.
