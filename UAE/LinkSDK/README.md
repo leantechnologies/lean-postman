@@ -4,9 +4,8 @@ A small set of static HTML pages that load the Lean Link SDK and expose each
 SDK method as a button. Use them to **manually test the SDK** in a real browser
 without writing any integration code.
 
-There is one page per **environment** (`AE01`, `AE02`, `AE03`, `SA01`, `SA02`)
-and per **SDK major version** (V1 and V2). The only differences between pages
-are:
+There is one page per **environment** (`AE01`, `SA01`) and per **SDK major
+version** (V1 and V2). The only differences between pages are:
 
 - The JavaScript global they attach (`window.Lean` for V1, `window.LeanV2` for V2).
 - Which buttons / methods are exposed (V2 adds a few V2-only methods).
@@ -21,14 +20,9 @@ The HTML, CSS, and button layout are otherwise identical.
 | --------------------- | ------ | --------- | --- | ------------------------------------------------------------------- | ----------------------------------------------------- |
 | `ae01-index.html`     | UAE    | Prod      | V1  | `cdn.leantech.me/link/sdk/web/latest/Lean.min.js`                   | —                                                     |
 | `ae01-v2-index.html`  | UAE    | Prod      | V2  | `cdn.leantech.me/link/sdk/web/v2/prod/ae/latest/Lean.min.js`        | Capture Redirect, Manage Consents, Auth VOD          |
-| `ae02-index.html`     | UAE    | Staging   | V1  | `cdn.leantech.me/link/sdk/web/staging/ae/latest/Lean.min.js`        | —                                                     |
-| `ae02-v2-index.html`  | UAE    | Staging   | V2  | `cdn.leantech.me/link/sdk/web/v2/staging/ae/latest/Lean.min.js`     | POA (`verifyAddress`)                                 |
-| `ae03-index.html`     | UAE    | Dev       | V1  | `cdn.leantech.me/link/sdk/web/dev/ae/latest/Lean.min.js`            | —                                                     |
-| `ae03-v2-index.html`  | UAE    | Dev       | V2  | `cdn.leantech.me/link/sdk/web/v2/dev/ae/latest/Lean.min.js`         | —                                                     |
 | `sa01-index.html`     | KSA    | Prod      | V1  | `cdn.leantech.me/sa/link/sdk/web/latest/Lean.min.js`                | (no V2 page exists for KSA)                           |
-| `sa02-index.html`     | KSA    | Staging   | V1  | `cdn.leantech.me/link/sdk/web/staging/sa/latest/Lean.min.js`        | (no V2 page exists for KSA)                           |
 
-**Pick a file by the environment whose SDK you want to test**, then choose V1
+**Pick a file by the region whose SDK you want to test**, then choose V1
 or V2 based on what your integration targets. The buttons (Link, Connect,
 Reconnect, Pay, …) behave the same across files — only the SDK build behind
 them differs.
@@ -42,9 +36,9 @@ These are plain static HTML files. Three options:
 ### Open directly (fastest)
 
 ```bash
-open ae03-v2-index.html        # macOS
-xdg-open ae03-v2-index.html    # Linux
-start ae03-v2-index.html       # Windows
+open ae01-v2-index.html        # macOS
+xdg-open ae01-v2-index.html    # Linux
+start ae01-v2-index.html       # Windows
 ```
 
 
@@ -272,9 +266,7 @@ creation and authorisation are split).
 | `sandbox`            | yes      |                                                                             |
 
 > Note: the button is labelled **"Authorise"** but the method is spelled
-> `authorize` (US). In `ae02-v2-index.html` the button's onclick handler is
-> defined inside the file but never invoked in the demo flow — check the
-> source of your specific file before relying on the binding.
+> `authorize` (US).
 
 ### `createBeneficiary(options)` — V1 and V2
 
@@ -329,18 +321,6 @@ Authorise an existing consent (VOD = Verification of Data).
 | `fail_redirect_url`    | yes      |                                                             |
 | `bank_identifier`      | no       | Optional pre-selection of the bank.                         |
 | `access_token`         | no       |                                                             |
-
-### `verifyAddress(options)` — V2 only, AE staging ("POA" in `ae02-v2-index.html`)
-
-Proof-of-address verification flow.
-
-| Key             | Required | Notes                                                |
-| --------------- | -------- | ---------------------------------------------------- |
-| `app_token`     | yes      |                                                      |
-| `customer_id`   | yes      |                                                      |
-| `customer_name` | yes      | Display name shown to the user during the flow.      |
-| `permissions`   | yes      | Typically `["identity"]`.                            |
-| `sandbox`       | yes      |                                                      |
 
 ---
 
@@ -406,7 +386,7 @@ saving IDs, etc.).
 
 To turn one of these into a starter for your own integration:
 
-1. **Pick the right base file** for the environment + SDK version you target.
+1. **Pick the right base file** for the region + SDK version you target.
 2. **Replace the bare identifiers** with your own `app_token` / `customer_id` /
    etc. (section 4, way 2).
 3. **Set `sandbox`** consistently across every function — `true` while
