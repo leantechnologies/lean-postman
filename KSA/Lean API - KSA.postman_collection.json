@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "b52830b6-1c31-4109-94aa-9dfae9e493c8",
+    "_postman_id": "f98bc886-2a7a-40e9-9743-64954ef6f13f",
     "name": "Lean API - KSA",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "32824512"
+    "_exporter_id": "33426666"
   },
   "item": [
     {
@@ -379,7 +379,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -528,7 +528,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -661,7 +661,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -792,7 +792,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -952,7 +952,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -1088,7 +1088,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -1262,7 +1262,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -4498,29 +4498,29 @@
                           ],
                           "query": [
                             {
-                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**",
                               "key": "async",
-                              "value": "false"
+                              "value": "false",
+                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**"
                             },
                             {
-                              "description": "The page you're requesting - returns page 0 of a response if not specified.",
                               "key": "page",
-                              "value": "0"
+                              "value": "0",
+                              "description": "The page you're requesting - returns page 0 of a response if not specified."
                             },
                             {
-                              "description": "The number of objects you want to return as a page size.",
                               "key": "size",
-                              "value": "50"
+                              "value": "50",
+                              "description": "The number of objects you want to return as a page size."
                             },
                             {
-                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function.",
                               "key": "entity_id",
-                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3"
+                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3",
+                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function."
                             },
                             {
-                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}",
                               "key": "meta",
-                              "value": "string"
+                              "value": "string",
+                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}"
                             }
                           ],
                           "variable": [
@@ -4904,7 +4904,7 @@
                       },
                       "status": "OK",
                       "code": 200,
-                      "_postman_previewlanguage": null,
+                      "_postman_previewlanguage": "Text",
                       "header": [
                         {
                           "key": ":status",
@@ -5469,7 +5469,7 @@
                       },
                       "status": "OK",
                       "code": 200,
-                      "_postman_previewlanguage": null,
+                      "_postman_previewlanguage": "Text",
                       "header": [
                         {
                           "key": ":status",
@@ -5782,29 +5782,29 @@
                           ],
                           "query": [
                             {
-                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**",
                               "key": "async",
-                              "value": "false"
+                              "value": "false",
+                              "description": "When true the API will return a results_id which can be fetched from the /data/v2/results endpoint when ready. **Note: it's recommended to use the sync flow (async=false) for all requests by adapting the [data workflow](https://docs.leantech.me/v2.0-KSA/docs/data-workflow) for connected entities.**"
                             },
                             {
-                              "description": "The page you're requesting - returns page 0 of a response if not specified.",
                               "key": "page",
-                              "value": "0"
+                              "value": "0",
+                              "description": "The page you're requesting - returns page 0 of a response if not specified."
                             },
                             {
-                              "description": "The number of objects you want to return as a page size.",
                               "key": "size",
-                              "value": "50"
+                              "value": "50",
+                              "description": "The number of objects you want to return as a page size."
                             },
                             {
-                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function.",
                               "key": "entity_id",
-                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3"
+                              "value": "8a78e977-7f3a-8772-ba26-c4c0424bb3e3",
+                              "description": "The entity_id you're querying for, which is created by LinkSDK `.connect()` function."
                             },
                             {
-                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}",
                               "key": "meta",
-                              "value": "string"
+                              "value": "string",
+                              "description": "Additional data you would like to store against the request. Example: {\"foo\": \"val\"}"
                             }
                           ],
                           "variable": [
@@ -6174,7 +6174,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -9959,7 +9959,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -10129,7 +10129,7 @@
                       },
                       "status": "OK",
                       "code": 200,
-                      "_postman_previewlanguage": null,
+                      "_postman_previewlanguage": "json",
                       "header": [
                         {
                           "key": ":status",
@@ -10140,8 +10140,10 @@
                           "value": "Sun, 10 May 2026 13:26:14 GMT"
                         },
                         {
-                          "key": "content-type",
-                          "value": "application/json"
+                          "key": "Content-Type",
+                          "value": "application/json",
+                          "description": "",
+                          "type": "text"
                         },
                         {
                           "key": "content-encoding",
@@ -10231,7 +10233,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"type\": \"ADDRESS\",\n  \"language\": \"en\",\n  \"identifications\": [\n    {\n      \"type\": \"UNIFIED_NUMBER\",\n      \"value\": \"7001272184\"\n    }\n  ]\n}",
+                  "raw": "{\n  \"type\": \"FULL\",\n  \"language\": \"en\",\n  \"identifications\": [\n    {\n      \"type\": \"UNIFIED_NUMBER\",\n      \"value\": \"7001272184\"\n    }\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -10291,7 +10293,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -10411,7 +10413,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -10537,7 +10539,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -10663,7 +10665,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -10774,7 +10776,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"type\": \"FULL\",\n  \"identifications\": [\n    {\n      \"type\": \"NATIONAL_ID\",\n      \"value\": \"1106972886\"\n    },\n    {\n      \"type\": \"FREELANCER_NUMBER\",\n      \"value\": \"FL-013988291\"\n    }\n  ]\n}",
+                  "raw": "{\n    \"type\": \"FULL\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        },\n        {\n            \"type\": \"FREELANCER_NUMBER\",\n            \"value\": \"FL-013988291\"\n        }\n    ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -10797,7 +10799,7 @@
               },
               "response": [
                 {
-                  "name": "Freelancer verification completed successfully",
+                  "name": "FULL - Verified - ACTIVE",
                   "originalRequest": {
                     "method": "POST",
                     "header": [
@@ -10850,6 +10852,854 @@
                   "body": "{\n  \"status\": \"OK\",\n  \"results_id\": \"e894ede4-dd81-41fb-b52d-fb4fec16c16c\",\n  \"message\": \"Data successfully retrieved\",\n  \"timestamp\": \"2025-05-19T12:09:54.672818827Z\",\n  \"meta\": null,\n  \"status_detail\": null,\n  \"verifications\": {\n    \"certificate_ownership_verified\": \"VERIFIED\",\n    \"national_id\": \"1107454009\",\n    \"name\": {\n      \"ar\": \"عادل عيد نفل الحارثي\",\n      \"en\": \"adel\"\n    },\n    \"national_id_expiry_date\": \"1450-07-01\",\n    \"certificate\": [\n      {\n        \"expiry_date\": \"2025-08-21\",\n        \"number\": \"FL-013988291\",\n        \"status\": \"ACTIVE\",\n        \"revoked_at\": null,\n        \"issue_date\": \"2024-08-21\",\n        \"speciality\": {\n          \"code\": \"AS090\",\n          \"name\": {\n            \"en\": \"Sales Promotion and Management\",\n            \"ar\": \"ادارة وتنشيط المبيعات\"\n          },\n          \"category\": {\n            \"name\": {\n              \"en\": \"Sales & Marketing\",\n              \"ar\": \"المبيعات والتسويق\"\n            },\n            \"code\": \"C106\"\n          }\n        },\n        \"canceled_at\": null\n      }\n    ],\n    \"gender\": \"MALE\"\n  }\n}"
                 },
                 {
+                  "name": "FULL - Verified - PENDING",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"FULL\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        },\n        {\n            \"type\": \"FREELANCER_NUMBER\",\n            \"value\": \"FL-595215341\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/freelancers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "freelancers"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:30:01 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "gzip"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY, DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "CaNbJDWFTsawyMEV"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "5d9bc162125a347b00284e997ab4ff3f"
+                    },
+                    {
+                      "key": "content-security-policy",
+                      "value": "frame-ancestors 'self' *.leantech.me leantech.coastdemo.com app.coast.io;"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8bee20e1bc5d9-DXB"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"6aea9b8a-742a-49a4-a899-bb9eb89f3a83\",\n    \"message\": \"Freelancer verification successful\",\n    \"timestamp\": \"2026-05-12T10:30:01.437839636Z\",\n    \"meta\": null,\n    \"status_detail\": null,\n    \"verifications\": {\n        \"certificate_ownership_verified\": \"VERIFIED\",\n        \"national_id\": \"1107454009\",\n        \"national_id_expiry_date\": \"2031-10-10\",\n        \"name\": {\n            \"ar\": \"مستقل معلق\",\n            \"en\": \"Pending Freelancer\"\n        },\n        \"gender\": \"FEMALE\",\n        \"certificate\": [\n            {\n                \"expiry_date\": \"2027-01-01\",\n                \"number\": \"FL-595215341\",\n                \"status\": \"PENDING\",\n                \"revoked_at\": null,\n                \"issue_date\": \"2025-01-01\",\n                \"speciality\": {\n                    \"code\": \"DM002\",\n                    \"name\": {\n                        \"ar\": \"التسويق الرقمي\",\n                        \"en\": \"Digital Marketing\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"التسويق\",\n                            \"en\": \"Marketing\"\n                        },\n                        \"code\": \"MKT001\"\n                    }\n                },\n                \"canceled_at\": null\n            }\n        ]\n    }\n}"
+                },
+                {
+                  "name": "FULL - Verified - CANCELED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"FULL\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        },\n        {\n            \"type\": \"FREELANCER_NUMBER\",\n            \"value\": \"FL-090302137\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/freelancers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "freelancers"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:31:35 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "gzip"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY, DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "cfHOJrWLefKHpTqZ"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "3f5d16c537bec97f955cf538e93d8b17"
+                    },
+                    {
+                      "key": "content-security-policy",
+                      "value": "frame-ancestors 'self' *.leantech.me leantech.coastdemo.com app.coast.io;"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8c12bace73169-MRS"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"743938df-1adf-400d-8153-e186b5fb9879\",\n    \"message\": \"Freelancer verification successful\",\n    \"timestamp\": \"2026-05-12T10:31:35.067783072Z\",\n    \"meta\": null,\n    \"status_detail\": null,\n    \"verifications\": {\n        \"certificate_ownership_verified\": \"VERIFIED\",\n        \"national_id\": \"1107454009\",\n        \"national_id_expiry_date\": \"2029-05-20\",\n        \"name\": {\n            \"ar\": \"مستقل ملغى\",\n            \"en\": \"Canceled Freelancer\"\n        },\n        \"gender\": \"MALE\",\n        \"certificate\": [\n            {\n                \"expiry_date\": \"2025-02-01\",\n                \"number\": \"FL-090302137\",\n                \"status\": \"CANCELED\",\n                \"revoked_at\": null,\n                \"issue_date\": \"2023-02-01\",\n                \"speciality\": {\n                    \"code\": \"GD003\",\n                    \"name\": {\n                        \"ar\": \"التصميم الجرافيكي\",\n                        \"en\": \"Graphic Design\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"الفنون الإبداعية\",\n                            \"en\": \"Creative Arts\"\n                        },\n                        \"code\": \"CA001\"\n                    }\n                },\n                \"canceled_at\": \"2024-06-20T00:00:00Z\"\n            }\n        ]\n    }\n}"
+                },
+                {
+                  "name": "FULL - Verified - REVOKED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"FULL\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        },\n        {\n            \"type\": \"FREELANCER_NUMBER\",\n            \"value\": \"FL-490775363\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/freelancers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "freelancers"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:32:14 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "gzip"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY, DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "cMWPPmTFbHBpzRRe"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "62cceae494189bfc6946165a0acc30f3"
+                    },
+                    {
+                      "key": "content-security-policy",
+                      "value": "frame-ancestors 'self' *.leantech.me leantech.coastdemo.com app.coast.io;"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8c2241b1a3169-MRS"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"9a81fd85-dd8f-4b40-93c8-3440d59f1953\",\n    \"message\": \"Freelancer verification successful\",\n    \"timestamp\": \"2026-05-12T10:32:14.846883221Z\",\n    \"meta\": null,\n    \"status_detail\": null,\n    \"verifications\": {\n        \"certificate_ownership_verified\": \"VERIFIED\",\n        \"national_id\": \"1107454009\",\n        \"national_id_expiry_date\": \"2028-11-30\",\n        \"name\": {\n            \"ar\": \"مستقل مسحوب\",\n            \"en\": \"Revoked Freelancer\"\n        },\n        \"gender\": \"FEMALE\",\n        \"certificate\": [\n            {\n                \"expiry_date\": \"2025-04-15\",\n                \"number\": \"FL-490775363\",\n                \"status\": \"REVOKED\",\n                \"revoked_at\": \"2024-05-15T00:00:00Z\",\n                \"issue_date\": \"2023-04-15\",\n                \"speciality\": {\n                    \"code\": \"DS004\",\n                    \"name\": {\n                        \"ar\": \"علم البيانات\",\n                        \"en\": \"Data Science\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"تقنية المعلومات\",\n                            \"en\": \"Information Technology\"\n                        },\n                        \"code\": \"IT001\"\n                    }\n                },\n                \"canceled_at\": null\n            }\n        ]\n    }\n}"
+                },
+                {
+                  "name": "FULL - Verified - EXPIRED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"FULL\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        },\n        {\n            \"type\": \"FREELANCER_NUMBER\",\n            \"value\": \"FL-541440269\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/freelancers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "freelancers"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:33:47 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "gzip"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY, DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "QcRUTbMTYyUMckkr"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "cd17e85cb8f4fda33fa4f34da614f108"
+                    },
+                    {
+                      "key": "content-security-policy",
+                      "value": "frame-ancestors 'self' *.leantech.me leantech.coastdemo.com app.coast.io;"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "report-to",
+                      "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/csp-reporting.cloudflare.com\\/cdn-cgi\\/script_monitor\\/report?m=eE.4QkvMr0meNOWxvW2z4phzhsnGAwDGIcxnYyWOQPA-1778582027-1.0.1.1-ZHEkdhfcreIL6kS1jpmdafU7UEghOR2orath6RxGcs6piFd6vp2K8fwFJcv51nLquzo8UbC6eaRBJIMcmI89IMsLttRzW5q6tncHEImpqoy.xr8B.qwt.LcpbbsaUSX827GDTxxmlwovtqOkWsQg8tgfG9t0BFyt1BfYUMl0ek9k8E7933auy.cf8SrE_2jI\"}],\"group\":\"cf-csp-endpoint\",\"max_age\":86400}"
+                    },
+                    {
+                      "key": "content-security-policy-report-only",
+                      "value": "script-src 'none'; report-uri https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=eE.4QkvMr0meNOWxvW2z4phzhsnGAwDGIcxnYyWOQPA-1778582027-1.0.1.1-ZHEkdhfcreIL6kS1jpmdafU7UEghOR2orath6RxGcs6piFd6vp2K8fwFJcv51nLquzo8UbC6eaRBJIMcmI89IMsLttRzW5q6tncHEImpqoy.xr8B.qwt.LcpbbsaUSX827GDTxxmlwovtqOkWsQg8tgfG9t0BFyt1BfYUMl0ek9k8E7933auy.cf8SrE_2jI; report-to cf-csp-endpoint"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8c467e9d6dddb-DXB"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"815a6684-3611-4136-bd0f-fbfdeeab52e8\",\n    \"message\": \"Freelancer verification successful\",\n    \"timestamp\": \"2026-05-12T10:33:47.633802607Z\",\n    \"meta\": null,\n    \"status_detail\": null,\n    \"verifications\": {\n        \"certificate_ownership_verified\": \"VERIFIED\",\n        \"national_id\": \"1107454009\",\n        \"national_id_expiry_date\": \"2033-01-01\",\n        \"name\": {\n            \"ar\": \"مستقل منتهي الصلاحية\",\n            \"en\": \"Expired Freelancer\"\n        },\n        \"gender\": \"MALE\",\n        \"certificate\": [\n            {\n                \"expiry_date\": \"2024-03-01\",\n                \"number\": \"FL-541440269\",\n                \"status\": \"EXPIRED\",\n                \"revoked_at\": null,\n                \"issue_date\": \"2022-03-01\",\n                \"speciality\": {\n                    \"code\": \"PM005\",\n                    \"name\": {\n                        \"ar\": \"إدارة المشاريع\",\n                        \"en\": \"Project Management\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"أعمال\",\n                            \"en\": \"Business\"\n                        },\n                        \"code\": \"BIZ002\"\n                    }\n                },\n                \"canceled_at\": null\n            }\n        ]\n    }\n}"
+                },
+                {
+                  "name": "FULL - Verified - REJECTED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"FULL\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        },\n        {\n            \"type\": \"FREELANCER_NUMBER\",\n            \"value\": \"FL-560899391\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/freelancers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "freelancers"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:34:17 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "gzip"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY, DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "IfQxbNbZrrdLBCRX"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "6eda4c051baddb2e6ab1296423f9b506"
+                    },
+                    {
+                      "key": "content-security-policy",
+                      "value": "frame-ancestors 'self' *.leantech.me leantech.coastdemo.com app.coast.io;"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8c5230e7ddddb-DXB"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"34776be9-58b0-41ff-85b2-db2031a258fc\",\n    \"message\": \"Freelancer verification successful\",\n    \"timestamp\": \"2026-05-12T10:34:17.55823562Z\",\n    \"meta\": null,\n    \"status_detail\": null,\n    \"verifications\": {\n        \"certificate_ownership_verified\": \"VERIFIED\",\n        \"national_id\": \"1107454009\",\n        \"national_id_expiry_date\": \"2032-07-07\",\n        \"name\": {\n            \"ar\": \"مستقل مرفوض\",\n            \"en\": \"Rejected Freelancer\"\n        },\n        \"gender\": \"FEMALE\",\n        \"certificate\": [\n            {\n                \"expiry_date\": null,\n                \"number\": \"FL-560899391\",\n                \"status\": \"REJECTED\",\n                \"revoked_at\": null,\n                \"issue_date\": null,\n                \"speciality\": {\n                    \"code\": \"HR006\",\n                    \"name\": {\n                        \"ar\": \"الموارد البشرية\",\n                        \"en\": \"Human Resources\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"أعمال\",\n                            \"en\": \"Business\"\n                        },\n                        \"code\": \"BIZ002\"\n                    }\n                },\n                \"canceled_at\": null\n            }\n        ]\n    }\n}"
+                },
+                {
+                  "name": "FULL_LIST - Verified",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"FULL_LIST\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/freelancers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "freelancers"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:12:01 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "gzip"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY, DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "XZYMOCfbsORWpRmZ"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "0dbc3848abed53e64ecc939130dbbd48"
+                    },
+                    {
+                      "key": "content-security-policy",
+                      "value": "frame-ancestors 'self' *.leantech.me leantech.coastdemo.com app.coast.io;"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8a482da1a11b9-MRS"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"91c20f92-edf5-4c86-8776-171364cbf858\",\n    \"message\": \"Freelancer verification successful\",\n    \"timestamp\": \"2026-05-12T10:12:01.394869265Z\",\n    \"meta\": null,\n    \"status_detail\": null,\n    \"verifications\": {\n        \"certificate_ownership_verified\": \"VERIFIED\",\n        \"national_id\": \"1107454009\",\n        \"national_id_expiry_date\": \"2030-12-31\",\n        \"name\": {\n            \"ar\": \"مستقل نشط\",\n            \"en\": \"Active Freelancer\"\n        },\n        \"gender\": \"MALE\",\n        \"certificate\": [\n            {\n                \"expiry_date\": \"2026-08-01\",\n                \"number\": \"FL-013988291\",\n                \"status\": \"ACTIVE\",\n                \"revoked_at\": null,\n                \"issue_date\": \"2024-08-01\",\n                \"speciality\": {\n                    \"code\": \"SD001\",\n                    \"name\": {\n                        \"ar\": \"تطوير البرمجيات\",\n                        \"en\": \"Software Development\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"تقنية المعلومات\",\n                            \"en\": \"Information Technology\"\n                        },\n                        \"code\": \"IT001\"\n                    }\n                },\n                \"canceled_at\": null\n            },\n            {\n                \"expiry_date\": \"2027-01-01\",\n                \"number\": \"FL-595215341\",\n                \"status\": \"PENDING\",\n                \"revoked_at\": null,\n                \"issue_date\": \"2025-01-01\",\n                \"speciality\": {\n                    \"code\": \"DM002\",\n                    \"name\": {\n                        \"ar\": \"التسويق الرقمي\",\n                        \"en\": \"Digital Marketing\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"التسويق\",\n                            \"en\": \"Marketing\"\n                        },\n                        \"code\": \"MKT001\"\n                    }\n                },\n                \"canceled_at\": null\n            },\n            {\n                \"expiry_date\": \"2025-02-01\",\n                \"number\": \"FL-090302137\",\n                \"status\": \"CANCELED\",\n                \"revoked_at\": null,\n                \"issue_date\": \"2023-02-01\",\n                \"speciality\": {\n                    \"code\": \"GD003\",\n                    \"name\": {\n                        \"ar\": \"التصميم الجرافيكي\",\n                        \"en\": \"Graphic Design\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"الفنون الإبداعية\",\n                            \"en\": \"Creative Arts\"\n                        },\n                        \"code\": \"CA001\"\n                    }\n                },\n                \"canceled_at\": \"2024-06-20T00:00:00Z\"\n            },\n            {\n                \"expiry_date\": \"2025-04-15\",\n                \"number\": \"FL-490775363\",\n                \"status\": \"REVOKED\",\n                \"revoked_at\": \"2024-05-15T00:00:00Z\",\n                \"issue_date\": \"2023-04-15\",\n                \"speciality\": {\n                    \"code\": \"DS004\",\n                    \"name\": {\n                        \"ar\": \"علم البيانات\",\n                        \"en\": \"Data Science\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"تقنية المعلومات\",\n                            \"en\": \"Information Technology\"\n                        },\n                        \"code\": \"IT001\"\n                    }\n                },\n                \"canceled_at\": null\n            },\n            {\n                \"expiry_date\": \"2024-03-01\",\n                \"number\": \"FL-541440269\",\n                \"status\": \"EXPIRED\",\n                \"revoked_at\": null,\n                \"issue_date\": \"2022-03-01\",\n                \"speciality\": {\n                    \"code\": \"PM005\",\n                    \"name\": {\n                        \"ar\": \"إدارة المشاريع\",\n                        \"en\": \"Project Management\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"أعمال\",\n                            \"en\": \"Business\"\n                        },\n                        \"code\": \"BIZ002\"\n                    }\n                },\n                \"canceled_at\": null\n            },\n            {\n                \"expiry_date\": null,\n                \"number\": \"FL-560899391\",\n                \"status\": \"REJECTED\",\n                \"revoked_at\": null,\n                \"issue_date\": null,\n                \"speciality\": {\n                    \"code\": \"HR006\",\n                    \"name\": {\n                        \"ar\": \"الموارد البشرية\",\n                        \"en\": \"Human Resources\"\n                    },\n                    \"category\": {\n                        \"name\": {\n                            \"ar\": \"أعمال\",\n                            \"en\": \"Business\"\n                        },\n                        \"code\": \"BIZ002\"\n                    }\n                },\n                \"canceled_at\": null\n            }\n        ]\n    }\n}"
+                },
+                {
+                  "name": "BASIC - Verified",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"BASIC\",\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1107454009\"\n        },\n        {\n            \"type\": \"FREELANCER_NUMBER\",\n            \"value\": \"FL-013988291\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/freelancers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "freelancers"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:17:02 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "gzip"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY, DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "PaEmMKJmfQwufkbY"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "6d486f2cad6f200faa10a927f39f21c7"
+                    },
+                    {
+                      "key": "content-security-policy",
+                      "value": "frame-ancestors 'self' *.leantech.me leantech.coastdemo.com app.coast.io;"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8abdf982eb479-DXB"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"f9e6fb2a-b1a0-493b-9e2f-5424b9339f08\",\n    \"message\": \"Freelancer verification successful\",\n    \"timestamp\": \"2026-05-12T10:17:02.789555632Z\",\n    \"meta\": null,\n    \"status_detail\": null,\n    \"verifications\": {\n        \"certificate_ownership_verified\": \"VERIFIED\",\n        \"national_id\": \"1107454009\",\n        \"national_id_expiry_date\": null,\n        \"name\": {\n            \"ar\": null,\n            \"en\": null\n        },\n        \"gender\": null,\n        \"certificate\": [\n            {\n                \"expiry_date\": \"2026-08-01\",\n                \"number\": null,\n                \"status\": \"ACTIVE\",\n                \"revoked_at\": null,\n                \"issue_date\": null,\n                \"speciality\": null,\n                \"canceled_at\": null\n            }\n        ]\n    }\n}"
+                },
+                {
                   "name": "Bad request due to invalid input parameters",
                   "originalRequest": {
                     "method": "POST",
@@ -10859,14 +11709,14 @@
                         "value": "application/json"
                       },
                       {
-                        "description": "Added as a part of security scheme: bearer",
                         "key": "Authorization",
-                        "value": "Bearer <token>"
+                        "value": "Bearer <token>",
+                        "description": "Added as a part of security scheme: bearer"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"type\": \"FULL\",\n  \"identifications\": [\n    {\n      \"type\": \"NATIONAL_ID\",\n      \"value\": \"1106972886\"\n    },\n    {\n      \"type\": \"FREELANCER_NUMBER\",\n      \"value\": \"FL-013988291\"\n    }\n  ]\n}",
+                      "raw": "{\n  \"type\": \"FULL\",\n  \"identifications\": [\n    {\n      \"type\": \"INVALID_TYPE\",\n      \"value\": \"1106972886\"\n    },\n    {\n      \"type\": \"FREELANCER_NUMBER\",\n      \"value\": \"FL-013988291\"\n    }\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -10888,10 +11738,83 @@
                   },
                   "status": "Bad Request",
                   "code": 400,
-                  "_postman_previewlanguage": "text",
-                  "header": [],
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 400
+                    },
+                    {
+                      "key": "date",
+                      "value": "Tue, 12 May 2026 10:22:16 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "221"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "9fa8b3870a50c6a5-MRS"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "lPyiSGqmgjNSwFPs"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "2c512150a99fb3ad17cc0a803cca304d"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
                   "cookie": [],
-                  "body": ""
+                  "body": "{\n    \"timestamp\": \"2026-05-12T10:22:16.321219729Z\",\n    \"status\": \"INVALID_PARAMETERS\",\n    \"message\": \"The request is badly formatted or a parameter of the wrong type has been provided, field: identifications->[0]->type\",\n    \"metadata\": null\n}"
                 },
                 {
                   "name": "Unauthorized due to invalid or missing authentication",
@@ -10903,9 +11826,10 @@
                         "value": "application/json"
                       },
                       {
-                        "description": "Added as a part of security scheme: bearer",
                         "key": "Authorization",
-                        "value": "Bearer <token>"
+                        "value": "Bearer <token>",
+                        "description": "Added as a part of security scheme: bearer",
+                        "disabled": true
                       }
                     ],
                     "body": {
