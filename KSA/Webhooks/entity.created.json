@@ -1,0 +1,32 @@
+{
+  "type": "entity.created",
+  "payload": {
+    "id": "ed20559b-11f4-40dd-b912-629b7f37855b",
+    "customer_id": "80f315e8-d429-48fe-a902-8b202bb32403",
+    "app_user_id": "test_postman",
+    "permissions": [
+      "transactions",
+      "balance",
+      "identity",
+      "identities",
+      "accounts",
+      "standing_orders",
+      "direct_debits",
+      "scheduled_payments",
+      "beneficiaries"
+    ],
+    "bank_details": {
+      "identifier": "LEA1_SAMAOB_SAU",
+      "name": "Mockbank 1",
+      "logo": "https://cdn.leantech.me/img/banks/color-gmockbank2.png",
+      "main_color": "#1beb75",
+      "background_color": "#ffffff",
+      "swift_code": "MOCKSA01",
+      "account_type": "PERSONAL",
+      "bank_type": "RETAIL"
+    }
+  },
+  "message": "An entity object has been created.",
+  "timestamp": "2026-05-12T14:34:40.391243281Z",
+  "event_id": "1e7974c5-4d91-4046-8c5f-35b26a5e4d20"
+}
