@@ -1,0 +1,49 @@
+{
+  "type": "entity.data.refresh.updated",
+  "payload": {
+    "entity_id": "ed20559b-11f4-40dd-b912-629b7f37855b",
+    "refresh_id": "30cbedab-d920-42e7-a6f4-01bfe55adda5",
+    "customer_id": "80f315e8-d429-48fe-a902-8b202bb32403",
+    "status": "FINISHED",
+    "data_status": {
+      "accounts": "OK",
+      "identity": "OK",
+      "account_data": [
+        {
+          "account_id": "b512d920-9389-4edc-a387-b7397658a195",
+          "balance": "OK",
+          "identity": "OK",
+          "transactions": "OK",
+          "scheduled_payments": "OK",
+          "direct_debits": "OK",
+          "standing_orders": "OK",
+          "beneficiaries": "OK",
+          "transaction_availability": {
+            "start": "2025-05-13",
+            "end": "2026-05-12",
+            "complete_months": 11
+          }
+        },
+        {
+          "account_id": "aa924b03-f544-4259-9797-9d6e9c0ed306",
+          "balance": "OK",
+          "identity": "OK",
+          "transactions": "OK",
+          "scheduled_payments": "OK",
+          "direct_debits": "OK",
+          "standing_orders": "OK",
+          "beneficiaries": "OK",
+          "transaction_availability": {
+            "start": "2025-05-13",
+            "end": "2026-05-12",
+            "complete_months": 11
+          }
+        }
+      ]
+    },
+    "app_user_id": "test_postman"
+  },
+  "message": "An entity data refresh state has been updated.",
+  "timestamp": "2026-05-12T14:34:49.972240761Z",
+  "event_id": "1986f068-0836-4115-abdf-dfbc91ebcd2e"
+}

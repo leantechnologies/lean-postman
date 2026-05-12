@@ -1,0 +1,13 @@
+{
+  "type": "bank.availability.updated",
+  "payload": {
+    "identifier": "BANK_KSA",
+    "availability": {
+      "active": { "payments": true, "data": true },
+      "enabled": { "payments": true, "data": true }
+    }
+  },
+  "message": "The bank status has been updated.",
+  "timestamp": "2026-05-12T13:45:53.371419668Z",
+  "event_id": "ee40ede8-a757-457b-a36a-9d0eb94c713e"
+}
