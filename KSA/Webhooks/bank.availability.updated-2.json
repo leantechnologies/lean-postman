@@ -1,0 +1,13 @@
+{
+  "type": "bank.availability.updated",
+  "payload": {
+    "identifier": "FAB_UAE",
+    "availability": {
+      "active": { "payments": false, "data": false },
+      "enabled": { "payments": true, "data": true }
+    }
+  },
+  "message": "The bank status has been updated.",
+  "timestamp": "2026-05-12T13:36:47.8939225Z",
+  "event_id": "207d9dfd-de4e-4f99-87e9-198d4ec88cf0"
+}
