@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "0d7edd48-00c6-4f3e-a3b5-cdd8a2d21e51",
+    "_postman_id": "20a8fd8e-a3d8-4d2b-83a6-b56680f65f47",
     "name": "Lean API - UAE",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "48096870"
+    "_exporter_id": "19307496"
   },
   "item": [
     {
@@ -10017,35 +10017,11 @@
       "name": "Payments",
       "item": [
         {
-          "name": "Create Payment Intent",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n        \"amount\": {{payment_amount}},\n        \"currency\": \"AED\",\n        \"payment_destination_id\": \"{{destination_id}}\",\n        \"customer_id\": \"{{customer_id}}\",\n        \"description\": \"{{payment_description}}\", //optional\n        \"purpose_code\": \"FIS\"\n} ",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/payments/v1/intents",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "payments",
-                "v1",
-                "intents"
-              ]
-            }
-          },
-          "response": [
+          "name": "Single Instant Payment",
+          "item": [
             {
               "name": "Create Payment Intent",
-              "originalRequest": {
+              "request": {
                 "method": "POST",
                 "header": [],
                 "body": {
@@ -10069,9 +10045,709 @@
                   ]
                 }
               },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "Text",
+              "response": [
+                {
+                  "name": "Create Payment Intent",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n        \"amount\": {{payment_amount}},\n        \"currency\": \"AED\",\n        \"payment_destination_id\": \"{{destination_id}}\",\n        \"customer_id\": \"{{customer_id}}\",\n        \"description\": \"{{payment_description}}\", //optional\n        \"purpose_code\": \"FIS\"\n} ",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/payments/v1/intents",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "payments",
+                        "v1",
+                        "intents"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"payment_intent_id\": \"2b0f9a59-c2f0-4d3b-b06b-20dd76084b94\",\n    \"customer_id\": \"fe158075-97f9-4e30-a8b9-641597b689d6\",\n    \"amount\": 5.00,\n    \"currency\": \"AED\",\n    \"description\": \"demo payment\",\n    \"payments\": [],\n    \"payment_destination\": {\n        \"id\": \"a9a9d921-5512-4bec-bda4-8909299afcc2\",\n        \"bank_identifier\": \"DIB_UAE\",\n        \"name\": \"Joseph Patrick Goddard\",\n        \"iban\": \"AE910240001523279032202\",\n        \"display_name\": \"Joseph Patrick Goddard\",\n        \"account_number\": \"1523279032202\",\n        \"swift_code\": \"DUIBAEADXXX\",\n        \"status\": \"CONFIRMED\",\n        \"address\": \"Marina\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"default\": false,\n        \"owner_type\": \"APPLICATION\",\n        \"branch_address\": \"JOE_DIB_UAE\",\n        \"currency_iso_code\": \"AED\",\n        \"confirmation_of_payee_status\": \"MATCH\",\n        \"bank_type\": \"RETAIL\"\n    },\n    \"created_at\": null,\n    \"updated_at\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "Get Payment By Intent Id",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{api_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.ae03.leantech.me/payments/v1/intents/{{intent_id}}",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "ae03",
+                    "leantech",
+                    "me"
+                  ],
+                  "path": [
+                    "payments",
+                    "v1",
+                    "intents",
+                    "{{intent_id}}"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Get Payment By Intent Id",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://api.ae03.leantech.me/payments/v1/intents/{{intent_id}}",
+                      "protocol": "https",
+                      "host": [
+                        "api",
+                        "ae03",
+                        "leantech",
+                        "me"
+                      ],
+                      "path": [
+                        "payments",
+                        "v1",
+                        "intents",
+                        "{{intent_id}}"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": null,
+                  "header": null,
+                  "cookie": [],
+                  "body": "{\n    \"payment_intent_id\": \"3862c184-3b47-4d0e-9b1b-c753bc901a04\",\n    \"customer_id\": \"fe158075-97f9-4e30-a8b9-641597b689d6\",\n    \"amount\": 5.00,\n    \"currency\": \"AED\",\n    \"description\": \"LN971508126617 first payment\",\n    \"payments\": [],\n    \"payment_destination\": {\n        \"id\": \"a9a9d921-5512-4bec-bda4-8909299afcc2\",\n        \"bank_identifier\": \"DIB_UAE\",\n        \"name\": \"Joseph Patrick Goddard\",\n        \"iban\": \"AE910240001523279032201\",\n        \"display_name\": \"Joseph Patrick Goddard\",\n        \"account_number\": \"1523279032201\",\n        \"swift_code\": \"DUIBAEADXXX\",\n        \"status\": \"CONFIRMED\",\n        \"address\": \"Marina\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"default\": false,\n        \"owner_type\": \"APPLICATION\",\n        \"ifsc\": null,\n        \"sort_code\": null,\n        \"routing_number\": null,\n        \"transit_code\": null,\n        \"branch_address\": \"JOE_DIB_UAE\",\n        \"currency_iso_code\": \"AED\",\n        \"postal_code\": null,\n        \"confirmation_of_payee_status\": \"MATCH\",\n        \"bank_type\": \"RETAIL\"\n    },\n    \"created_at\": \"2026-05-12T10:07:32.253588Z\",\n    \"updated_at\": \"2026-05-12T10:07:32.253588Z\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Get Payment By Payment Id",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{api_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/payments/v1/{{payment_id}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments",
+                    "v1",
+                    "{{payment_id}}"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Get Payments For Customer",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/customers/{{customer_id}}/payments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "customers",
+                        "{{customer_id}}",
+                        "payments"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": null,
+                  "cookie": [],
+                  "body": "{\n  \"id\": \"88c4d3e8-b80c-cd46-ac56-f084879744d6\",\n  \"payment_intent_id\": \"30caf494-d6e0-d83e-907b-9393361c3895\",\n  \"payment_source_id\": \"8d98c54d-b11f-4f39-52bb-6065dc0f4749\",\n  \"sender_details\": {\n    \"account_number\": \"0101929293\",\n    \"iban\": \"AE132353311P10164V8R3\",\n    \"name\": \"Dwight Schrute\"\n  },\n  \"recipient_details\": {\n    \"account_number\": \"0192929827\",\n    \"iban\": \"AE23QQWD1004305268319738\",\n    \"name\": \"Michael Gary Scott\"\n  },\n  \"amount\": 3448.38,\n  \"currency\": \"AED\",\n  \"description\": \"30caf494d6e0d83e907b9393361c3895\",\n  \"submission_timestamp\": \"2024-09-19T11:43:08.933Z\",\n  \"initiation_timestamp\": \"2024-09-19T11:43:17.683Z\",\n  \"status\": \"ACCEPTED_BY_BANK\",\n  \"bank_transaction_reference\": \"WD100430526831\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "List Payment Intents",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/payments/v1/intents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments",
+                    "v1",
+                    "intents"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "List Payment Intents",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/payments/v1/intents",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "payments",
+                        "v1",
+                        "intents"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "",
+                  "header": [],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n  \"data\": [\n    {\n      \"payment_intent_id\": \"77f0c07e-7b7b-4677-bb05-6261f9eead0c\",\n      \"customer_id\": \"89bf7bf8-89cb-42e5-8332-eeef869a2524\",\n      \"amount\": 61.4,\n      \"currency\": \"AED\",\n      \"description\": \"77f0c07e7b7b4677bb056261f9eead0c\",\n      \"payments\": [\n        {\n          \"id\": \"25c90cc6-67dc-4193-a6e9-a7c875fcc0af\",\n          \"payment_intent_id\": \"77f0c07e-7b7b-4677-bb05-6261f9eead0c\",\n          \"payment_source_id\": \"b6fba7da-1054-5e82-8a9a-afd3ab4d1710\",\n          \"sender_details\": {\n            \"account_number\": \"XXXXXXXXXXXX\",\n            \"iban\": \"AE940030011XXXXXXXXXXXX\",\n            \"name\": \"John Doe\"\n          },\n          \"recipient_details\": {\n            \"account_number\": \"XXXXXXXXXXXX\",\n            \"iban\": \"AE870200000XXXXXXXXXXXX\",\n            \"name\": \"Al Fulani\"\n          },\n          \"amount\": 61.4,\n          \"currency\": \"AED\",\n          \"description\": \"77f0c07e7b7b4677bb056261f9eead0c\",\n          \"submission_timestamp\": \"2021-05-18T13:58:03.427045Z\",\n          \"initiation_timestamp\": \"2021-05-18T13:58:42.445103Z\",\n          \"status\": \"ACCEPTED_BY_BANK\",\n          \"bank_transaction_reference\": \"0492981211381081\"\n        }\n      ],\n      \"payment_destination\": {\n        \"id\": \"95c29647-c568-40d7-8710-3e330de1b5f2\",\n        \"bank_identifier\": \"HSBC_UAE\",\n        \"name\": \"Acme Corp.\",\n        \"iban\": \"AE870200000XXXXXXXXXXXX\",\n        \"display_name\": \"Acme Corp.\",\n        \"account_number\": \"XXXXXXXXXXXX\",\n        \"swift_code\": \"BBMEAEAD\",\n        \"status\": \"CONFIRMED\",\n        \"address\": \"Acme Towers, 51st Floor\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"default\": true,\n        \"owner_type\": \"APPLICATION\"\n      }\n    }\n  ],\n  \"page\": {\n    \"number\": 0,\n    \"size\": 50,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n  }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Account On File",
+          "item": [
+            {
+              "name": "Create AOF Consent",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"consent_id\", pm.response.json().id);"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{api_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"customer_id\": \"{{customer_id}}\",\n    \"destination_account_id\": \"{{payment_destination_id}}\",\n    \"currency\": \"AED\",\n    \"description\": \"{{payment_description}}\",\n    \"reference\": \"{{payment_reference}}\",\n    \"purpose\": \"FIS\",\n    \"control_parameters\": {\n        \"period_type\": \"Year\", // Year, Month, Daily\n        \"max_individual_amount\": \"50000\",\n        \"max_cumulative_number_of_payments\": \"\", // optional\n        \"max_cumulative_amount_per_period\": \"\", // optional\n        \"max_cumulative_number_of_payments_per_period\": \"\" // optional\n    },\n    \"government_identifier\": {\n        \"value\": \"{{emirates_id}}\",\n        \"type\": \"EMIRATES_ID\"\n    },\n    \"immediate_payment\": { // optional\n\t\"amount\": 5,\n\t\"reference\": \"{{payment_reference}}\", // optional\n\t\"creditor_reference\": \"{{creditor_reference}}\" // optional\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/consents/account-on-file",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consents",
+                    "account-on-file"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Create AOF Consent",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"customer_id\": \"{{customer_id}}\",\n    \"destination_account_id\": \"{{payment_destination_id}}\",\n    \"currency\": \"AED\",\n    \"description\": \"{{payment_description}}\",\n    \"reference\": \"{{payment_reference}}\",\n    \"purpose\": \"FIS\",\n    \"control_parameters\": {\n        \"period_type\": \"Year\", // Year, Month, Daily\n        \"max_individual_amount\": \"50000\",\n        \"max_cumulative_number_of_payments\": \"\", // optional\n        \"max_cumulative_amount_per_period\": \"\", // optional\n        \"max_cumulative_number_of_payments_per_period\": \"\" // optional\n    },\n    \"government_identifier\": {\n        \"value\": \"{{emirates_id}}\",\n        \"type\": \"EMIRATES_ID\"\n    },\n    \"immediate_payment\": { // optional\n\t\"amount\": 5,\n\t\"reference\": \"{{payment_reference}}\", // optional\n\t\"creditor_reference\": \"{{creditor_reference}}\" // optional\n    }\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/consents/account-on-file",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "consents",
+                        "account-on-file"
+                      ]
+                    }
+                  },
+                  "code": 200,
+                  "_postman_previewlanguage": "",
+                  "header": [],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"id\": \"86fe0be5-f7b4-45dd-9efd-4117481bf59d\",\n    \"application_id\": \"2fd5fd4c-c674-4659-9f5e-b71f870ed822\",\n    \"start_date_time\": \"2026-05-12T08:40:44.701442911Z\",\n    \"expiration_date_time\": \"2027-05-11T08:40:44.701442911Z\",\n    \"customer_id\": \"fe158075-97f9-4e30-a8b9-641597b689d6\",\n    \"status\": \"AWAITING_AUTHORISATION\",\n    \"destination_account_id\": \"76043104-1882-465d-9997-07c532d5a2be\",\n    \"reference\": \"IP-007\",\n    \"currency\": \"AED\",\n    \"purpose\": \"FIS\",\n    \"control_parameters\": {\n        \"period_type\": \"Month\",\n        \"max_individual_amount\": 5000,\n        \"max_cumulative_amount\": null,\n        \"max_cumulative_number_of_payments\": 365,\n        \"max_cumulative_amount_per_period\": 500,\n        \"max_cumulative_number_of_payments_per_period\": 365\n    },\n    \"immediate_payment\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "Initiate AOF Payment",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{api_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Idempotency-Key",
+                    "value": "{{idempotency_ke}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"consent_id\": \"{{consent_id}}\",\n   \"amount\": \"{{payment_amount}}\",\n    \"reference\": \"{{payment_reference}}\",\n    \"creditor_reference\": \"{{creditor_reference}}\",\n    \"risk_details\": {\n        \"channel\": \"MOBILE\"\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://api.ae03.leantech.me/payments/account-on-file",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "ae03",
+                    "leantech",
+                    "me"
+                  ],
+                  "path": [
+                    "payments",
+                    "account-on-file"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Initiate AOF Payment",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Idempotency-Key",
+                        "value": "{{idempotency_ke}}",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"consent_id\": \"{{consent_id}}\",\n   \"amount\": \"{{payment_amount}}\",\n    \"reference\": \"{{payment_reference}}\",\n    \"creditor_reference\": \"{{creditor_reference}}\",\n    \"risk_details\": {\n        \"channel\": \"MOBILE\"\n    }\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://api.ae03.leantech.me/payments/account-on-file",
+                      "protocol": "https",
+                      "host": [
+                        "api",
+                        "ae03",
+                        "leantech",
+                        "me"
+                      ],
+                      "path": [
+                        "payments",
+                        "account-on-file"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": null,
+                  "header": null,
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Consents",
+          "item": [
+            {
+              "name": "Get Consent Details By Id",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{api_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.ae03.leantech.me/consents/{{consent_id}}",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "ae03",
+                    "leantech",
+                    "me"
+                  ],
+                  "path": [
+                    "consents",
+                    "{{consent_id}}"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Get Consent Details By Id",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/consents/{{consent_id}}",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "consents",
+                        "{{consent_id}}"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "",
+                  "header": [],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"consent_id\": \"86fe0be5-f7b4-45dd-9efd-4117481bf59d\",\n    \"bank_identifier\": null,\n    \"application_id\": \"2fd5fd4c-c674-4659-9f5e-b71f870ed822\",\n    \"start_date_time\": \"2026-05-12T08:40:44.701443Z\",\n    \"expiration_date_time\": \"2027-05-11T08:40:44.701443Z\",\n    \"customer_id\": \"fe158075-97f9-4e30-a8b9-641597b689d6\",\n    \"status\": \"AWAITING_AUTHORISATION\",\n    \"destination_account_id\": \"76043104-1882-465d-9997-07c532d5a2be\",\n    \"reference\": \"IP-007\",\n    \"consented_account\": null,\n    \"currency\": \"AED\",\n    \"payment_purpose\": {\n        \"code\": \"FIS\",\n        \"description\": \"Financial services\"\n    },\n    \"control_parameters\": {\n        \"type\": \"VariableOnDemand\",\n        \"period_type\": \"Month\",\n        \"max_individual_amount\": 5000,\n        \"max_cumulative_amount\": null,\n        \"max_cumulative_number_of_payments\": 365,\n        \"max_cumulative_amount_per_period\": 500,\n        \"max_cumulative_number_of_payments_per_period\": 365\n    },\n    \"payment_consumption\": {\n        \"cumulative_number_of_payments\": 0,\n        \"cumulative_value_of_payments\": 0.0,\n        \"cumulative_number_of_payments_in_current_period\": 0,\n        \"cumulative_value_of_payments_in_current_period\": 0.0\n    },\n    \"immediate_payment\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fetch Consent Balance",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{api_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/consents/{{consent_id}}/balance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consents",
+                    "{{consent_id}}",
+                    "balance"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Get Balance",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/consents/{{consent_id}}/balance",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "consents",
+                        "{{consent_id}}",
+                        "balance"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": null,
+                  "header": null,
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            },
+            {
+              "name": "Get Consent History",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{api_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/consents/{{consent_id}}/history",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consents",
+                    "{{consent_id}}",
+                    "history"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Get Consent History",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://api.ae03.leantech.me/consents/{{consent_id}}/history",
+                      "protocol": "https",
+                      "host": [
+                        "api",
+                        "ae03",
+                        "leantech",
+                        "me"
+                      ],
+                      "path": [
+                        "consents",
+                        "{{consent_id}}",
+                        "history"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "",
+                  "header": [],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"data\": [\n        {\n            \"id\": \"121c3693-bbe8-4cda-963e-7944b437cb71\",\n            \"type\": \"CONSENT_CREATED\",\n            \"description\": \"A new consent was created.\",\n            \"timestamp\": \"2026-05-12T08:40:44.734109Z\",\n            \"updated_by\": \"LEAN\",\n            \"reason\": null\n        }\n    ],\n    \"page\": {\n        \"number\": 0,\n        \"size\": 100,\n        \"total_elements\": 1,\n        \"total_pages\": 1\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "List customers consents",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/consents/v1?page_number=0&page_size=100",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consents",
+                    "v1"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "0"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "100"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "List customers consents",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/consents/v1?page_number=0&page_size=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "consents",
+                        "v1"
+                      ],
+                      "query": [
+                        {
+                          "key": "page_number",
+                          "value": "0"
+                        },
+                        {
+                          "key": "page_size",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "",
+                  "header": [],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n  \"data\": [\n    {\n      \"consent_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"bank_identifier\": \"string\",\n      \"application_id\": \"string\",\n      \"start_date_time\": \"2026-05-12T10:30:35.515Z\",\n      \"expiration_date_time\": \"2026-05-12T10:30:35.515Z\",\n      \"customer_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"status\": \"AWAITING_AUTHORISATION\",\n      \"destination_account_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"reference\": \"string\",\n      \"consented_account\": {\n        \"iban\": \"string\",\n        \"holder_name\": \"string\"\n      },\n      \"currency\": \"string\",\n      \"payment_purpose\": {\n        \"code\": \"FIS\",\n        \"description\": \"string\"\n      },\n      \"control_parameters\": {\n        \"type\": \"string\",\n        \"period_type\": \"Day\",\n        \"max_individual_amount\": 0,\n        \"max_cumulative_amount\": 0,\n        \"max_cumulative_number_of_payments\": 0,\n        \"max_cumulative_amount_per_period\": 0,\n        \"max_cumulative_number_of_payments_per_period\": 0\n      },\n      \"payment_consumption\": {\n        \"cumulative_number_of_payments\": 10,\n        \"cumulative_value_of_payments\": 10000.05,\n        \"cumulative_number_of_payments_in_current_period\": 5,\n        \"cumulative_value_of_payments_in_current_period\": 5000.05\n      }\n    }\n  ],\n  \"page\": {\n    \"number\": 0,\n    \"size\": 0,\n    \"total_elements\": 0,\n    \"total_pages\": 0,\n    \"sort\": [\n      \"string\"\n    ]\n  }\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Payment Source",
+      "item": [
+        {
+          "name": "Get all payment sources for customer",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/v1/customer_id/payment-sources",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "customers",
+                "v1",
+                "customer_id",
+                "payment-sources"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/v1/{{customer_id}}/payment-sources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    "v1",
+                    "{{customer_id}}",
+                    "payment-sources"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
               "header": [],
               "cookie": [
                 {
@@ -10080,7 +10756,289 @@
                   "path": ""
                 }
               ],
-              "body": "{\n    \"payment_intent_id\": \"2b0f9a59-c2f0-4d3b-b06b-20dd76084b94\",\n    \"customer_id\": \"fe158075-97f9-4e30-a8b9-641597b689d6\",\n    \"amount\": 5.00,\n    \"currency\": \"AED\",\n    \"description\": \"demo payment\",\n    \"payments\": [],\n    \"payment_destination\": {\n        \"id\": \"a9a9d921-5512-4bec-bda4-8909299afcc2\",\n        \"bank_identifier\": \"DIB_UAE\",\n        \"name\": \"Joseph Patrick Goddard\",\n        \"iban\": \"AE910240001523279032202\",\n        \"display_name\": \"Joseph Patrick Goddard\",\n        \"account_number\": \"1523279032202\",\n        \"swift_code\": \"DUIBAEADXXX\",\n        \"status\": \"CONFIRMED\",\n        \"address\": \"Marina\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"default\": false,\n        \"owner_type\": \"APPLICATION\",\n        \"branch_address\": \"JOE_DIB_UAE\",\n        \"currency_iso_code\": \"AED\",\n        \"confirmation_of_payee_status\": \"MATCH\",\n        \"bank_type\": \"RETAIL\"\n    },\n    \"created_at\": null,\n    \"updated_at\": null\n}"
+              "body": "[\n  {\n    \"id\": \"d8d7a9b3-c401-49f6-81a4-386d8398aa2c\",\n    \"customer_id\": \"6db94cb7-3a02-4a57-a03a-e2a92ce86406\",\n    \"app_id\": \"YOUR_APP_ID\",\n    \"status\": \"AWAITING_BENEFICIARY_COOL_OFF\",\n    \"beneficiary_cool_off_expiry\": \"2021-02-13T13:20:57.674299Z\",\n    \"bank_identifier\": \"ENBD_UAE\",\n    \"beneficiaries\": [\n      {\n        \"id\": \"26891A75-9406-4E06-97BA-F4D6DA664F3C\",\n        \"payment_destination_id\": \"f044c18b-3a51-49a2-bd3f-a585679d8885\",\n        \"status\": \"AWAITING_BENEFICIARY_COOL_OFF\",\n        \"beneficiary_cool_off_expiry\": \"2021-02-13T13:20:57.674299Z\"\n      }\n    ],\n    \"accounts\": [\n      {\n        \"id\": \"9acde98e-9d19-495d-934c-b2ff966262c8\",\n        \"account_id\": \"aaadbc4e-96a4-420f-ba01-597fa63502ee\",\n        \"account_name\": \"CURRENT ACCOUNT\",\n        \"account_number\": \"1015528734001\",\n        \"iban\": \"AE340260001015528734001\",\n        \"balance\": 35681.15,\n        \"currency\": \"AED\",\n        \"balance_last_updated\": \"2021-02-12T13:20:23.83922Z\"\n      },\n      {\n        \"id\": \"1457d23a-c1f8-4aee-bc6f-2a253b2e617f\",\n        \"account_id\": \"69f22112-e95d-427e-8bd1-eb58b4db60ba\",\n        \"account_name\": \"CURRENCY PASSPORT SAVINGS AC\",\n        \"account_number\": \"0315528734002\",\n        \"iban\": \"AE790260000315528734002\",\n        \"balance\": 80871,\n        \"currency\": \"USD\",\n        \"balance_last_updated\": \"2021-02-12T13:20:57.370659Z\"\n      }\n    ]\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get Payment source by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/v1/customer_id/payment-sources/{{payment_source_id}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "customers",
+                "v1",
+                "customer_id",
+                "payment-sources",
+                "{{payment_source_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/v1/customer_id/payment-sources/{{payment_source_id}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    "v1",
+                    "customer_id",
+                    "payment-sources",
+                    "{{payment_source_id}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n  \"id\": \"d8d7a9b3-c401-49f6-81a4-386d8398aa2c\",\n  \"customer_id\": \"6db94cb7-3a02-4a57-a03a-e2a92ce86406\",\n  \"app_id\": \"YOUR_APP_ID\",\n  \"status\": \"AWAITING_BENEFICIARY_COOL_OFF\",\n  \"beneficiary_cool_off_expiry\": \"2021-02-13T13:20:57.674299Z\",\n  \"bank_identifier\": \"ENBD_UAE\",\n  \"beneficiaries\": [\n    {\n      \"id\": \"26891A75-9406-4E06-97BA-F4D6DA664F3C\",\n      \"payment_destination_id\": \"f044c18b-3a51-49a2-bd3f-a585679d8885\",\n      \"status\": \"AWAITING_BENEFICIARY_COOL_OFF\",\n      \"beneficiary_cool_off_expiry\": \"2021-02-13T13:20:57.674299Z\"\n    }\n  ],\n  \"accounts\": [\n    {\n      \"id\": \"9acde98e-9d19-495d-934c-b2ff966262c8\",\n      \"account_id\": \"aaadbc4e-96a4-420f-ba01-597fa63502ee\",\n      \"account_name\": \"CURRENT ACCOUNT\",\n      \"account_number\": \"1015528734001\",\n      \"iban\": \"AE340260001015528734001\",\n      \"currency\": \"AED\"\n    },\n    {\n      \"id\": \"1457d23a-c1f8-4aee-bc6f-2a253b2e617f\",\n      \"account_id\": \"69f22112-e95d-427e-8bd1-eb58b4db60ba\",\n      \"account_name\": \"CURRENCY PASSPORT SAVINGS AC\",\n      \"account_number\": \"0315528734002\",\n      \"iban\": \"AE790260000315528734002\",\n      \"currency\": \"USD\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete payment source",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n{\n  \"reason\": \"USER_REQUESTED\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/customers/v1/{{customer_id}}/payment-sources/{{payment_source_id}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "customers",
+                "v1",
+                "{{customer_id}}",
+                "payment-sources",
+                "{{payment_source_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "content-type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\n{\n  \"reason\": \"USER_REQUESTED\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/customers/v1/{{customer_id}}/payment-sources/{{payment_source_id}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    "v1",
+                    "{{customer_id}}",
+                    "payment-sources",
+                    "{{payment_source_id}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Payment Destination",
+      "item": [
+        {
+          "name": "Create Destination",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n{\n  \"bank_type\": \"RETAIL\",\n  \"government_identifier\": {\n    \"type\": \"EMIRATES_ID\",\n    \"value\": \"{{emirates_id}}\"\n  },\n  \"name\": \"John Doe\",\n  \"iban\": \"{{iban}}\",\n  \"display_name\": \"John Doe\",\n  \"address\": \"Sheikh Zayed Road\",\n  \"city\": \"Dubai\",\n  \"country\": \"ARE\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{auth_baseUrl}}/payments/v1/destinations",
+              "host": [
+                "{{auth_baseUrl}}"
+              ],
+              "path": [
+                "payments",
+                "v1",
+                "destinations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": []
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n  \"id\": \"88c71f16-2af3-4b06-979d-92b5354a9174\",\n  \"status\": \"ACTIVE\",\n  \"default\": false,\n  \"branch_address\": \"45 Lansing Street, Dubai, United Arab Emirates\",\n  \"name\": \"Fulani Al Fulani\",\n  \"iban\": \"AE760260001015000000601\",\n  \"display_name\": \"Al Fulani\",\n  \"address\": \"1234 Sky Bldg.\",\n  \"city\": \"Abu Dhabi\",\n  \"country\": \"ARE\",\n  \"swift_code\": \"EBILAEADXXX\",\n  \"account_number\": \"1015000000601\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "List Payment Destinations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://sandbox.leantech.me/payments/v1/destinations",
+              "protocol": "https",
+              "host": [
+                "sandbox",
+                "leantech",
+                "me"
+              ],
+              "path": [
+                "payments",
+                "v1",
+                "destinations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Payment Destinations",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "https://sandbox.leantech.me/payments/v1/destinations",
+                  "protocol": "https",
+                  "host": [
+                    "sandbox",
+                    "leantech",
+                    "me"
+                  ],
+                  "path": [
+                    "payments",
+                    "v1",
+                    "destinations"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"6910fddc-417c-f7fd-6e4b-4d7de3d0bc06\",\n    \"status\": \"CONFIRMED\",\n    \"default\": false,\n    \"name\": \"Fake Corp.\",\n    \"iban\": \"AE27LSWP9X25E4883A13998\",\n    \"display_name\": \"Fake Corp. - AED\",\n    \"address\": \"1234 Sky Bldg.\",\n    \"city\": \"Abu Dhabi\",\n    \"country\": \"ARE\",\n    \"swift_code\": \"EBILEADXXX\",\n    \"account_number\": \"000120203\",\n    \"currency\": \"AED\"\n  },\n  {\n    \"id\": \"432150ea-99d1-5bd8-aed3-35d4c7a2b4b4\",\n    \"status\": \"CONFIRMED\",\n    \"default\": false,\n    \"name\": \"Fake Corp.\",\n    \"iban\": \"AE27LSWP9X25E4883A139K7\",\n    \"display_name\": \"Fake Corp. - USD\",\n    \"address\": \"1234 Sky Bldg.\",\n    \"city\": \"Abu Dhabi\",\n    \"country\": \"ARE\",\n    \"swift_code\": \"EBILEADXXX\",\n    \"account_number\": \"000120202\",\n    \"currency\": \"USD\"\n  }\n]"
             }
           ]
         }
@@ -10172,6 +11130,38 @@
     },
     {
       "key": "payment_description",
+      "value": ""
+    },
+    {
+      "key": "intent_id",
+      "value": ""
+    },
+    {
+      "key": "payment_reference",
+      "value": ""
+    },
+    {
+      "key": "emirates_id",
+      "value": ""
+    },
+    {
+      "key": "idempotency_key",
+      "value": ""
+    },
+    {
+      "key": "consent_id",
+      "value": ""
+    },
+    {
+      "key": "creditor_reference",
+      "value": ""
+    },
+    {
+      "key": "payment_source_id",
+      "value": ""
+    },
+    {
+      "key": "iban",
       "value": "",
       "type": "default"
     }
