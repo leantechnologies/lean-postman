@@ -1,8 +1,8 @@
 # Lean Postman Collections
 
-Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Lean APIs with no additional code, this is the place for you.
+Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Lean APIs with no additional code, this repo to help you.
 
-The repository ships two ready-to-use Postman collections, one per region:
+The repository contains two ready-to-use Postman collections, one per country:
 
 - `KSA/LeanAPI-KSA.postman_collection.json`
 - `UAE/Lean-API-UAE.postman_collection.json`
@@ -39,3 +39,16 @@ The `client_id` and `client_secret` can be retreived under the `Integration` tab
 ![lean-postman-configuration](/images/lean_credentials.png)
 
 4. Save your changes and start making Lean API requests!
+
+---
+
+## LinkSDK playgrounds
+
+You can use the HTML playground that loads the Lean LinkSDK from the CDN and exposes a LinkSDK methods as buttons. You can try the SDK end-to-end in a real browser with no build step.
+
+| Country | Demo file | Details |
+| ------ | --------- | --------------- |
+| KSA    | `KSA/LinkSDK/LinkSDK-demo-ksa.html` | [`KSA/LinkSDK/README.md`](./KSA/LinkSDK/README.md) |
+| UAE    | `UAE/LinkSDK/LinkSDK-demo-UAE.html` | [`UAE/LinkSDK/README.md`](./UAE/LinkSDK/README.md) |
+
+
