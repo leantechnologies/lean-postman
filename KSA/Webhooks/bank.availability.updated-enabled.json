@@ -1,7 +1,7 @@
 {
   "type": "bank.availability.updated",
   "payload": {
-    "identifier": "BANK_KSA",
+    "identifier": "LEA1_SAMAOB_SAU",
     "availability": {
       "active": { "payments": true, "data": true },
       "enabled": { "payments": true, "data": true }

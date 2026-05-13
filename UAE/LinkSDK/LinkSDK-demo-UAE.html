@@ -130,11 +130,6 @@
     <main role="main" class="inner cover">
       <h1 class="cover-heading">Link SDK Demo</h1>
       <p class="lead">
-        <button class="btn btn-lg btn-secondary" type="button" onclick="link();">
-          Link
-        </button>
-      </p>
-      <p class="lead">
         <button class="btn btn-lg btn-secondary" type="button" onclick="connect();">
           Connect
         </button>
@@ -191,9 +186,9 @@
 
 </body>
 <script>
-        const customer_id=  "";
-        const app_token= "";
-        const customer_access_token= "";
+        const customer_id=  "e99f0ffd-33e1-4a4c-8313-3029cc2743c9";
+        const app_token= "1dcf69a3-46d6-4257-af9c-0ba87cc91b1d";
+        const customer_access_token= "eyJraWQiOiJkZGVhNTZjNS1lNjc5LTRmNDItYWVkYi1jNGY0ZWQyMDFhYmEiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxZGNmNjlhMy00NmQ2LTQyNTctYWY5Yy0wYmE4N2NjOTFiMWQiLCJhdWQiOlsiaHR0cHM6Ly9saW5rLnNhbmRib3gubGVhbnRlY2gubWUiLCJodHRwczovL3NlY3VyZS1hcGkuc2FuZGJveC5sZWFudGVjaC5tZSJdLCJuYmYiOjE3Nzg3MDA1NTMsInNjb3BlIjpbImN1c3RvbWVyLnJlYWQiLCJiZW5lZmljaWFyeS53cml0ZSIsInBheW1lbnQud3JpdGUiLCJwYXltZW50LnJlYWQiLCJkZXN0aW5hdGlvbi5yZWFkIiwiY29ubmVjdC53cml0ZSIsImNvbm5lY3QucmVhZCIsImFwcGxpY2F0aW9uLnJlYWQiLCJiYW5rLnJlYWQiLCJrZXkucmVhZCJdLCJpc3MiOiJodHRwczovL2F1dGguc2FuZGJveC5sZWFudGVjaC5tZSIsImN1c3RvbWVycyI6W3siaWQiOiJlOTlmMGZmZC0zM2UxLTRhNGMtODMxMy0zMDI5Y2MyNzQzYzkifV0sImV4cCI6MTc3ODcwNDE1MywiaWF0IjoxNzc4NzAwNTUzLCJqdGkiOiJkODA3NjBmYy01ODk3LTQ2YjEtOTA5Ny00Nzk2ZWE2MWM2YTgiLCJhcHBsaWNhdGlvbnMiOlt7ImlkIjoiMWRjZjY5YTMtNDZkNi00MjU3LWFmOWMtMGJhODdjYzkxYjFkIn1dfQ.L6oui7CTzhPxBLSEYDfcVTyAiQRYFr7HgrxQTJiU1Dwlr-dpXE-2dJYR_Ah36hIx6vJ4BjLMEuS7kr09eTlad6ne3BHBGzQqobbZidIuCPmktmZcAvNUwm3tgEiswJtyPN22WUeEpl4PPIrvorblRKbhJWvwBU0x9nu83lzXd5ovQFH2fYkeviqpwq3blTH0Z0WyV48vE6OtvQ7PxU7miQBZbE9jllPRmMyP5zvNJ1MKyNShGQecZP5yihzNVPdBwC1IutKTDfnBVvDJE7PmVXz8_0PxmA-83q1lT4HRn2clXE75r2zCsuf7sMusoa6wla5BjA_IyB6qsdFh6Ia5bA";
 
   function cb(state) {
     console.log(state);
@@ -203,7 +198,7 @@
     LeanV2.connect({
       customer_id: customer_id,
       app_token: app_token,
-      access_token: access_token,
+      access_token: customer_access_token,
       permissions: ["accounts", "transactions", "balance", "identity"],
       sandbox: true,
       success_redirect_url: "https://www.leantech.me/?success=true",

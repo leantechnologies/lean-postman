@@ -1,10 +1,4 @@
 {
-    "id": "162d8bbe-5b62-4a70-9148-157f48043e14",
-    "webhook_message_id": "b8e924ae-d0c2-48c7-8ec5-2cf2a89a7256",
-    "status": "OK",
-    "event_type": "payment_intent.created",
-    "timestamp": "2026-05-13T10:50:11.071449Z",
-    "request": {
       "type": "payment_intent.created",
       "message": "Payment intent created",
       "payload": {
@@ -19,6 +13,4 @@
       },
       "event_id": "b8e924ae-d0c2-48c7-8ec5-2cf2a89a7256",
       "timestamp": "2026-05-13T10:50:11.063005979Z"
-    },
-    "response": null
   }

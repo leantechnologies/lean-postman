@@ -1,10 +1,4 @@
 {
-    "id": "62f4cf34-c6f8-4cb8-ab87-9da70f05fe6b",
-    "webhook_message_id": "7640a75d-9a48-4da2-ba36-7cdeaf394cb5",
-    "status": "OK",
-    "event_type": "payment.updated",
-    "timestamp": "2026-05-12T14:33:00.560418Z",
-    "request": {
       "type": "payment.updated",
       "message": "A payment object has been updated.",
       "payload": {
@@ -22,6 +16,4 @@
       },
       "event_id": "7640a75d-9a48-4da2-ba36-7cdeaf394cb5",
       "timestamp": "2026-05-12T14:33:00.552682062Z"
-    },
-    "response": null
   }
