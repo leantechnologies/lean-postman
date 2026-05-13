@@ -1,0 +1,162 @@
+{
+  "id": "350d941f-5e97-40fe-8a4a-d1cb72f292f6",
+  "webhook_message_id": "29296847-0297-47e2-a67f-19a73a7a2af3",
+  "status": "OK",
+  "event_type": "entity.data.refresh.updated",
+  "timestamp": "2026-05-12T15:24:30.125576Z",
+  "request": {
+    "type": "entity.data.refresh.updated",
+    "message": "An entity data refresh state has been updated.",
+    "payload": {
+      "status": "OK",
+      "entity_id": "42df962f-f81b-4e42-aabc-e3ee87978f29",
+      "refresh_id": "cf173306-6217-4c46-a93d-37f6cdc259fe",
+      "app_user_id": "lean_test_framework_user_4761778599373013",
+      "customer_id": "383e9d6c-0f68-4366-a0e1-c954455c1c16",
+      "data_status": {
+        "accounts": "OK",
+        "identity": "OK",
+        "account_data": [
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "f2c9628a-a98c-4405-b678-6256b9cef8aa",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-07-01",
+              "complete_months": 10
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "0bc75e4c-1e2a-4f6b-acf3-427b4446e076",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-05-13",
+              "complete_months": 11
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "734decb5-0d45-4383-a879-018d57efba62",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-07-01",
+              "complete_months": 10
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "ef99ad99-3c38-4bd5-9d0a-463a7df93ee3",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-07-01",
+              "complete_months": 10
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "5f4ddfee-85ae-494b-afe7-97b40200573c",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-07-01",
+              "complete_months": 10
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "183ddf2b-a553-4e11-bde2-364d9f91f813",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-05-13",
+              "complete_months": 11
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "95cdc23b-cd3d-46a6-8430-62d4f2fc728f",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-02-28",
+              "start": "2026-01-01",
+              "complete_months": 2
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "a00e1a27-50a7-4394-9a13-787ae3b9af41",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-07-01",
+              "complete_months": 10
+            }
+          },
+          {
+            "balance": "OK",
+            "identity": "OK",
+            "account_id": "26cb635d-8625-4b8f-bb64-7d92c09cc669",
+            "transactions": "OK",
+            "beneficiaries": "UNSUPPORTED",
+            "direct_debits": "UNSUPPORTED",
+            "standing_orders": "UNSUPPORTED",
+            "scheduled_payments": "UNSUPPORTED",
+            "transaction_availability": {
+              "end": "2026-05-12",
+              "start": "2025-07-01",
+              "complete_months": 10
+            }
+          }
+        ]
+      }
+    },
+    "event_id": "29296847-0297-47e2-a67f-19a73a7a2af3",
+    "timestamp": "2026-05-12T15:23:02.308959607Z"
+  },
+  "response": null
+}
