@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "20a8fd8e-a3d8-4d2b-83a6-b56680f65f47",
+    "_postman_id": "c1093d23-e7ff-4a89-b2e9-6bcbdc4f127c",
     "name": "Lean API - UAE",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "19307496"
+    "_exporter_id": "48096870"
   },
   "item": [
     {
@@ -9880,7 +9880,7 @@
       "name": "Payouts",
       "item": [
         {
-          "name": "Create Payout Payment",
+          "name": "Create Payout Payment Copy",
           "request": {
             "method": "POST",
             "header": [
@@ -9893,11 +9893,16 @@
                 "key": "content-type",
                 "value": "application/json",
                 "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"payment_details\": [\n        {\n            \"account_id\": \"{{payouts_account_id}}\",\n            \"currency\": \"AED\",\n            \"destination_details\": [\n                {\n                    \"authorize_payment\": false, \n                    \"payment_destination_id\": \"{{payouts_destination_id}}\",\n                    \"amount\": 15,\n                    \"description\": \"test payment\"\n                }\n            ]\n        }\n    ]\n}",
+              "raw": "{\n    \"payment_details\": [\n        {\n            \"account_id\": \"2652e3ac-3f34-48c2-b1ae-ed81e30c6601\",\n            \"currency\": \"AED\",\n            \"destination_details\": [\n                {\n                    \"authorize_payment\": true, // default is false\n                    \"payment_destination_id\": \"8a7472ab-0e7d-4c3a-a1a6-b3206d033953\",\n                    \"amount\": 16,\n                    \"description\": \"test payment\"\n                }\n            ]\n        }\n    ]\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -9905,9 +9910,9 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/payouts/v1/payment",
+              "raw": "{{sandbox_host}}/payouts/v1/payment",
               "host": [
-                "{{baseUrl}}"
+                "{{sandbox_host}}"
               ],
               "path": [
                 "payouts",
@@ -9916,10 +9921,145 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "Create Payout Payment",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "content-type",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"payment_details\": [\n        {\n            \"account_id\": \"2652e3ac-3f34-48c2-b1ae-ed81e30c6601\",\n            \"currency\": \"AED\",\n            \"destination_details\": [\n                {\n                    \"authorize_payment\": true, // default is false\n                    \"payment_destination_id\": \"8a7472ab-0e7d-4c3a-a1a6-b3206d033953\",\n                    \"amount\": 16,\n                    \"description\": \"test payment\"\n                }\n            ]\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/v1/payment",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "v1",
+                    "payment"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 08:02:55 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "CZlfrSNmpTXwcOlz"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "23fa36badd56cf1c506c0d64d1d925bf"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fb024c5ffaf2b24-MRS"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"end_user_id\": \"3eb56f0c-cfa1-4a37-b1bd-0de76209b219\",\n    \"payouts_payment_details\": [\n        {\n            \"payment_intent_id\": \"84ec9ed2-fea2-486d-9967-a87f0f521e95\",\n            \"initiate_payment_task_id\": \"8a89c3a0-f15d-42ea-8607-6dbb46925a42\",\n            \"account_number\": \"5591673153157838\",\n            \"iban\": \"AE360355591673153157838\",\n            \"destination_details\": {\n                \"destination_id\": \"8a7472ab-0e7d-4c3a-a1a6-b3206d033953\",\n                \"amount\": 16,\n                \"currency\": \"AED\",\n                \"payment_status\": \"CREATED\",\n                \"error_message\": null,\n                \"recipient_details\": {\n                    \"account_number\": \"12312312312123\",\n                    \"iban\": \"AE680030012312312312123\",\n                    \"name\": \"ABC CORP\"\n                }\n            },\n            \"bank_identifier\": \"LEAN_DC_MB_SAU\"\n        }\n    ]\n}"
+            }
+          ]
         },
         {
-          "name": "List Payouts",
+          "name": "List Payouts Copy",
           "request": {
             "method": "GET",
             "header": [
@@ -9927,12 +10067,17 @@
                 "key": "accept",
                 "value": "application/json",
                 "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/payouts/v1/payments?page_number=0&page_size=50",
+              "raw": "{{sandbox_host}}/payouts/v1/payments?page_number=0&page_size=50",
               "host": [
-                "{{baseUrl}}"
+                "{{sandbox_host}}"
               ],
               "path": [
                 "payouts",
@@ -9952,10 +10097,141 @@
             },
             "description": "Generated from cURL: curl --request GET \\\n     --url 'https://api.leantech.me/payouts/v1/payments?page_number=0&page_size=50' \\\n     --header 'accept: application/json'"
           },
-          "response": []
+          "response": [
+            {
+              "name": "List Payouts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/v1/payments?page_number=0&page_size=50",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "v1",
+                    "payments"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "0"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "50"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 07:04:08 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "cBKCTcknYYsugLeI"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "144173aa5d891d4d7f8f246028c2243a"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fafcea9a827ad41-DXB"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"content\": [\n        {\n            \"recipient_name\": \"ABC CORP\",\n            \"recipient_bank_name\": \"LEAN_SME_MB1_UAE\",\n            \"recipient_iban\": \"AE680030012312312312123\",\n            \"recipient_cool_off_expiry\": \"2026-05-13T06:56:42.339256Z\",\n            \"recipient_address\": \"Dubai\",\n            \"recipient_city\": \"Dubai\",\n            \"recipient_country\": \"ARE\",\n            \"description\": \"test payment\",\n            \"currency\": \"AED\",\n            \"amount\": 15,\n            \"created_at\": \"2026-05-13T07:02:01.166240Z\",\n            \"updated_at\": \"2026-05-13T07:02:02.171135Z\",\n            \"payment_intent_id\": \"6aebe8b1-d869-4fb7-a908-939b95a994c8\",\n            \"auto_authorized\": true,\n            \"pending_manual_authorization\": false,\n            \"status\": \"FAILED\",\n            \"post_initiation_status\": null,\n            \"bank_transaction_reference\": null\n        }\n    ],\n    \"page\": {\n        \"number\": 0,\n        \"size\": 50,\n        \"total_elements\": 1,\n        \"total_pages\": 1,\n        \"sort\": null\n    }\n}"
+            }
+          ]
         },
         {
-          "name": "Get Payouts",
+          "name": "Get Payment History Copy",
           "request": {
             "method": "GET",
             "header": [
@@ -9963,25 +10239,155 @@
                 "key": "accept",
                 "value": "application/json",
                 "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/payouts/v1/{{paymentId}}",
+              "raw": "{{sandbox_host}}/payouts/v1/payments/{{payment_id}}/history",
               "host": [
-                "{{baseUrl}}"
+                "{{sandbox_host}}"
               ],
               "path": [
                 "payouts",
                 "v1",
-                "{{paymentId}}"
+                "payments",
+                "{{payment_id}}",
+                "history"
               ]
             },
-            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/payment_id \\\n     --header 'accept: application/json'"
+            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/payments/payment_id/history \\\n     --header 'accept: application/json'"
           },
-          "response": []
+          "response": [
+            {
+              "name": "Get Payment History",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/v1/payments/{{payment_intent_id}}/history",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "v1",
+                    "payments",
+                    "{{payment_intent_id}}",
+                    "history"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 08:51:09 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "eEAwyugISBQRUjzJ"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "81a42f1901638760665e060db9a46e1b"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fb06b6e38a78a0d-DXB"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"content\": [\n        {\n            \"payment_id\": \"4c8cfd64-8b68-46e4-9531-9c4bbaefca85\",\n            \"events\": [\n                {\n                    \"event\": \"payment.created\",\n                    \"status\": \"ACCEPTED_BY_BANK\",\n                    \"post_initiation_status\": null,\n                    \"published_at\": \"2026-05-13T08:02:56.302859Z\"\n                }\n            ]\n        }\n    ],\n    \"page\": {\n        \"number\": 0,\n        \"size\": 10,\n        \"total_elements\": 1,\n        \"total_pages\": 1,\n        \"sort\": null\n    }\n}"
+            }
+          ]
         },
         {
-          "name": "Get Payout Intent",
+          "name": "Get Payouts Copy",
           "request": {
             "method": "GET",
             "header": [
@@ -9989,12 +10395,169 @@
                 "key": "accept",
                 "value": "application/json",
                 "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/payouts/v1/intents/{{payment_intent_id}}",
+              "raw": "{{sandbox_host}}/payouts/v1/{{payment_id}}",
               "host": [
-                "{{baseUrl}}"
+                "{{sandbox_host}}"
+              ],
+              "path": [
+                "payouts",
+                "v1",
+                "{{payment_id}}"
+              ]
+            },
+            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/payment_id \\\n     --header 'accept: application/json'"
+          },
+          "response": [
+            {
+              "name": "Get Payouts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/v1/{{payment_id}}",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "v1",
+                    "{{payment_id}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 08:03:37 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "NmxCYTJLGkENkBVX"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "67a59f3cdf7672e9ba1ab1aec196fa50"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fb025d03df12b24-MRS"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"4c8cfd64-8b68-46e4-9531-9c4bbaefca85\",\n    \"payment_intent_id\": \"84ec9ed2-fea2-486d-9967-a87f0f521e95\",\n    \"payment_source_id\": \"3eb56f0c-cfa1-4a37-b1bd-0de76209b219\",\n    \"sender_details\": {\n        \"account_number\": \"5591673153157838\",\n        \"iban\": \"AE360355591673153157838\",\n        \"name\": \"Current Account\"\n    },\n    \"recipient_details\": {\n        \"account_number\": \"12312312312123\",\n        \"iban\": \"AE680030012312312312123\",\n        \"name\": \"Santiago Keebler\"\n    },\n    \"amount\": 16,\n    \"currency\": \"AED\",\n    \"description\": \"test payment\",\n    \"submission_timestamp\": \"2026-05-13T08:02:56.075921Z\",\n    \"initiation_timestamp\": \"2026-05-13T08:02:56.231877Z\",\n    \"status\": \"ACCEPTED_BY_BANK\",\n    \"post_initiation_status\": \"PROCESSED\",\n    \"bank_transaction_reference\": \"256884595\",\n    \"granular_status_code\": null,\n    \"status_additional_details\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Payout Intent Copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{sandbox_host}}/payouts/v1/intents/{{payment_intent_id}}",
+              "host": [
+                "{{sandbox_host}}"
               ],
               "path": [
                 "payouts",
@@ -10005,10 +10568,132 @@
             },
             "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/intents/payment_intent_id \\\n     --header 'accept: application/json'"
           },
-          "response": []
+          "response": [
+            {
+              "name": "Get Payout Intent",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/v1/intents/{{payment_intent_id}}",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "v1",
+                    "intents",
+                    "{{payment_intent_id}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 08:04:39 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "fOWmNCmXmwqFFSOH"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "41b3705117ad31035cec10f8e98c2a14"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fb027502bbec5d9-DXB"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"payment_intent_id\": \"84ec9ed2-fea2-486d-9967-a87f0f521e95\",\n    \"customer_id\": \"fc07c600-ef35-48c1-a428-2c4067a54def\",\n    \"amount\": 16,\n    \"currency\": \"AED\",\n    \"description\": \"test payment\",\n    \"external_reference\": null,\n    \"payment\": {\n        \"id\": \"4c8cfd64-8b68-46e4-9531-9c4bbaefca85\",\n        \"payment_intent_id\": \"84ec9ed2-fea2-486d-9967-a87f0f521e95\",\n        \"payment_source_id\": \"3eb56f0c-cfa1-4a37-b1bd-0de76209b219\",\n        \"sender_details\": {\n            \"account_number\": \"5591673153157838\",\n            \"iban\": \"AE360355591673153157838\",\n            \"name\": \"Current Account\"\n        },\n        \"recipient_details\": {\n            \"account_number\": \"12312312312123\",\n            \"iban\": \"AE680030012312312312123\",\n            \"name\": \"Santiago Keebler\"\n        },\n        \"amount\": 16,\n        \"currency\": \"AED\",\n        \"description\": \"test payment\",\n        \"submission_timestamp\": \"2026-05-13T08:02:56.075921Z\",\n        \"initiation_timestamp\": \"2026-05-13T08:02:56.231877Z\",\n        \"status\": \"ACCEPTED_BY_BANK\",\n        \"post_initiation_status\": \"PROCESSED\",\n        \"bank_transaction_reference\": \"256884595\",\n        \"granular_status_code\": null,\n        \"status_additional_details\": null\n    },\n    \"payment_destination\": {\n        \"id\": \"8a7472ab-0e7d-4c3a-a1a6-b3206d033953\",\n        \"name\": \"Santiago Keebler\",\n        \"bank_identifier\": \"LEAN_SME_MB1_UAE\",\n        \"short_name\": \"ABC CORP\",\n        \"iban\": \"AE680030012312312312123\",\n        \"account_number\": \"12312312312123\",\n        \"swift_code\": \"ADCBAEAAXXX\",\n        \"status\": \"ACTIVE\",\n        \"address\": \"Dubai\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"emirate\": \"Dubai\",\n        \"ifsc\": null,\n        \"sort_code\": null,\n        \"cool_off_expiry\": null,\n        \"routing_code\": null,\n        \"transit_code\": null,\n        \"branch_address\": \"Dubai\",\n        \"currency_iso_code\": \"AED\",\n        \"postal_code\": \"90710\"\n    }\n}"
+            }
+          ]
         },
         {
-          "name": "Create Payouts Destination(s)",
+          "name": "Create Payouts Destination(s) Copy",
           "request": {
             "method": "POST",
             "header": [
@@ -10020,6 +10705,11 @@
               {
                 "key": "content-type",
                 "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
                 "type": "text"
               }
             ],
@@ -10033,9 +10723,9 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/payouts/v1/payment/destinations",
+              "raw": "{{sandbox_host}}/payouts/v1/payment/destinations",
               "host": [
-                "{{baseUrl}}"
+                "{{sandbox_host}}"
               ],
               "path": [
                 "payouts",
@@ -10046,10 +10736,146 @@
             },
             "description": "Generated from cURL: curl --request POST \\\n     --url https://api.leantech.me/payouts/v1/payment/destinations \\\n     --header 'accept: application/json' \\\n     --header 'content-type: application/json' \\\n     --data '\n[\n  {\n    \"bank_identifier\": \"LEAN_SME_MB1_UAE\",\n    \"name\": \"Santiago Keebler\",\n    \"iban\": \"AE123030303000\",\n    \"display_name\": \"ABC CORP\",\n    \"account_number\": \"0303030\",\n    \"swift_code\": \"UCHZPL2OXXX\",\n    \"ifsc\": \"HADBC0001234\",\n    \"sort_code\": \"89\",\n    \"routing_number\": \"106519958\",\n    \"transit_code\": \"9\",\n    \"address\": \"Texas Wisokystead Wayne County 802 Washington Street Apt. 205\",\n    \"branch_address\": \"Idaho East Elmore Marion County 59966 E 4th Avenue Suite 288\",\n    \"country\": \"ARE\",\n    \"city\": \"Abu Dhabi\",\n    \"customer_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"currency_iso_code\": \"AED\",\n    \"postal_code\": \"90710\"\n  }\n]\n'"
           },
-          "response": []
+          "response": [
+            {
+              "name": "Create Payouts Destination(s)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "content-type",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n    {\n        \"bank_identifier\": \"LEAN_SME_MB1_UAE\",\n        \"name\": \"Santiago Keebler\",\n        \"iban\": \"AE680030012312312312123\",\n        \"display_name\": \"ABC CORP\",\n        \"account_number\": \"12312312312123\",\n        \"swift_code\": \"EBILAEADXXX\",\n        \"address\": \"Dubai\",\n        \"branch_address\": \"Dubai\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"currency_iso_code\": \"AED\",\n        \"postal_code\": \"90710\"\n    }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/v1/payment/destinations",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "v1",
+                    "payment",
+                    "destinations"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 06:56:41 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "OASaLUfkdPmzkXQn"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "94b791c409a7d34c55493395d744d42f"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fafc3c4090accd4-DXB"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"add_beneficiary_task_id\": \"bc22c19a-af07-40b2-a12a-4f6b7c60906d\",\n        \"destination_id\": \"8a7472ab-0e7d-4c3a-a1a6-b3206d033953\",\n        \"bank_identifier\": \"LEAN_SME_MB1_UAE\",\n        \"iban\": \"AE680030012312312312123\",\n        \"account_number\": \"12312312312123\",\n        \"display_name\": \"ABC CORP\",\n        \"status\": \"CONFIRMED\"\n    }\n]"
+            }
+          ]
         },
         {
-          "name": "Get Payouts Destination",
+          "name": "Get Payouts Destination Copy",
           "request": {
             "method": "GET",
             "header": [
@@ -10057,12 +10883,17 @@
                 "key": "accept",
                 "value": "application/json",
                 "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/payouts/v1/payment/destinations/{{destination_id}}",
+              "raw": "{{sandbox_host}}/payouts/v1/payment/destinations/{{destination_id}}",
               "host": [
-                "{{baseUrl}}"
+                "{{sandbox_host}}"
               ],
               "path": [
                 "payouts",
@@ -10207,8 +11038,8 @@
                       ]
                     }
                   },
-                  "_postman_previewlanguage": null,
-                  "header": null,
+                  "_postman_previewlanguage": "Text",
+                  "header": [],
                   "cookie": [],
                   "body": "{\n    \"payment_intent_id\": \"3862c184-3b47-4d0e-9b1b-c753bc901a04\",\n    \"customer_id\": \"fe158075-97f9-4e30-a8b9-641597b689d6\",\n    \"amount\": 5.00,\n    \"currency\": \"AED\",\n    \"description\": \"LN971508126617 first payment\",\n    \"payments\": [],\n    \"payment_destination\": {\n        \"id\": \"a9a9d921-5512-4bec-bda4-8909299afcc2\",\n        \"bank_identifier\": \"DIB_UAE\",\n        \"name\": \"Joseph Patrick Goddard\",\n        \"iban\": \"AE910240001523279032201\",\n        \"display_name\": \"Joseph Patrick Goddard\",\n        \"account_number\": \"1523279032201\",\n        \"swift_code\": \"DUIBAEADXXX\",\n        \"status\": \"CONFIRMED\",\n        \"address\": \"Marina\",\n        \"country\": \"ARE\",\n        \"city\": \"Dubai\",\n        \"default\": false,\n        \"owner_type\": \"APPLICATION\",\n        \"ifsc\": null,\n        \"sort_code\": null,\n        \"routing_number\": null,\n        \"transit_code\": null,\n        \"branch_address\": \"JOE_DIB_UAE\",\n        \"currency_iso_code\": \"AED\",\n        \"postal_code\": null,\n        \"confirmation_of_payee_status\": \"MATCH\",\n        \"bank_type\": \"RETAIL\"\n    },\n    \"created_at\": \"2026-05-12T10:07:32.253588Z\",\n    \"updated_at\": \"2026-05-12T10:07:32.253588Z\"\n}"
                 }
@@ -10261,8 +11092,8 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
-                  "header": null,
+                  "_postman_previewlanguage": "Text",
+                  "header": [],
                   "cookie": [],
                   "body": "{\n  \"id\": \"88c4d3e8-b80c-cd46-ac56-f084879744d6\",\n  \"payment_intent_id\": \"30caf494-d6e0-d83e-907b-9393361c3895\",\n  \"payment_source_id\": \"8d98c54d-b11f-4f39-52bb-6065dc0f4749\",\n  \"sender_details\": {\n    \"account_number\": \"0101929293\",\n    \"iban\": \"AE132353311P10164V8R3\",\n    \"name\": \"Dwight Schrute\"\n  },\n  \"recipient_details\": {\n    \"account_number\": \"0192929827\",\n    \"iban\": \"AE23QQWD1004305268319738\",\n    \"name\": \"Michael Gary Scott\"\n  },\n  \"amount\": 3448.38,\n  \"currency\": \"AED\",\n  \"description\": \"30caf494d6e0d83e907b9393361c3895\",\n  \"submission_timestamp\": \"2024-09-19T11:43:08.933Z\",\n  \"initiation_timestamp\": \"2024-09-19T11:43:17.683Z\",\n  \"status\": \"ACCEPTED_BY_BANK\",\n  \"bank_transaction_reference\": \"WD100430526831\"\n}"
                 }
@@ -10305,7 +11136,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [],
                   "cookie": [
                     {
@@ -10398,7 +11229,7 @@
                     }
                   },
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [],
                   "cookie": [
                     {
@@ -10492,10 +11323,10 @@
                       ]
                     }
                   },
-                  "_postman_previewlanguage": null,
-                  "header": null,
+                  "_postman_previewlanguage": "Text",
+                  "header": [],
                   "cookie": [],
-                  "body": null
+                  "body": ""
                 }
               ]
             }
@@ -10553,7 +11384,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [],
                   "cookie": [
                     {
@@ -10611,10 +11442,10 @@
                       ]
                     }
                   },
-                  "_postman_previewlanguage": null,
-                  "header": null,
+                  "_postman_previewlanguage": "Text",
+                  "header": [],
                   "cookie": [],
-                  "body": null
+                  "body": ""
                 }
               ]
             },
@@ -10669,7 +11500,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [],
                   "cookie": [
                     {
@@ -10745,7 +11576,7 @@
                       ]
                     }
                   },
-                  "_postman_previewlanguage": "",
+                  "_postman_previewlanguage": "Text",
                   "header": [],
                   "cookie": [
                     {
@@ -10812,7 +11643,7 @@
                   ]
                 }
               },
-              "_postman_previewlanguage": "",
+              "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [
                 {
@@ -10876,7 +11707,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "",
+              "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [
                 {
@@ -10966,7 +11797,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "",
+              "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [
                 {
@@ -11024,11 +11855,14 @@
               "name": "New Request",
               "originalRequest": {
                 "method": "GET",
-                "header": []
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "",
+              "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [
                 {
@@ -11094,7 +11928,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "",
+              "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [
                 {
@@ -11106,6 +11940,591 @@
               "body": "[\n  {\n    \"id\": \"6910fddc-417c-f7fd-6e4b-4d7de3d0bc06\",\n    \"status\": \"CONFIRMED\",\n    \"default\": false,\n    \"name\": \"Fake Corp.\",\n    \"iban\": \"AE27LSWP9X25E4883A13998\",\n    \"display_name\": \"Fake Corp. - AED\",\n    \"address\": \"1234 Sky Bldg.\",\n    \"city\": \"Abu Dhabi\",\n    \"country\": \"ARE\",\n    \"swift_code\": \"EBILEADXXX\",\n    \"account_number\": \"000120203\",\n    \"currency\": \"AED\"\n  },\n  {\n    \"id\": \"432150ea-99d1-5bd8-aed3-35d4c7a2b4b4\",\n    \"status\": \"CONFIRMED\",\n    \"default\": false,\n    \"name\": \"Fake Corp.\",\n    \"iban\": \"AE27LSWP9X25E4883A139K7\",\n    \"display_name\": \"Fake Corp. - USD\",\n    \"address\": \"1234 Sky Bldg.\",\n    \"city\": \"Abu Dhabi\",\n    \"country\": \"ARE\",\n    \"swift_code\": \"EBILEADXXX\",\n    \"account_number\": \"000120202\",\n    \"currency\": \"USD\"\n  }\n]"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "Refunds",
+      "item": [
+        {
+          "name": "List Refunds",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{sandbox_host}}/payouts/refunds?size=50&status=APPROVED",
+              "host": [
+                "{{sandbox_host}}"
+              ],
+              "path": [
+                "payouts",
+                "refunds"
+              ],
+              "query": [
+                {
+                  "key": "size",
+                  "value": "50"
+                },
+                {
+                  "key": "status",
+                  "value": "APPROVED",
+                  "description": "Filter refunds by status (e.g., CREATED, APPROVED, REJECTED)"
+                }
+              ]
+            },
+            "description": "Returns a list of all refunds initiated . You can filter the transactions based on status of the refund transaction by passing it in the query parameter i.e. filter refunds by status (e.g., CREATED, APPROVED, REJECTED). This API allows pagination with the default size of 50 refunds per page."
+          },
+          "response": [
+            {
+              "name": "List Refunds",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "lean-app-token",
+                    "value": "45b23411-76b9-4f26-92dd-ff505d21060e",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/refunds?size=50",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "refunds"
+                  ],
+                  "query": [
+                    {
+                      "key": "size",
+                      "value": "50"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 11:55:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "gvWQLMDyAFaiVZtn"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "b972a5b7e43268a1f5f113da12501a50"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fb179823eb511c1-MRS"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"content\": [\n        {\n            \"refund_id\": \"6ab2ec23-b8fb-49af-9f3c-917368121a1d\",\n            \"deposit_amount\": 35,\n            \"deposit_currency\": \"AED\",\n            \"payment_id\": \"23ff863d-6a00-490b-9ba2-5188dcc5bcac\",\n            \"status\": \"FAILED\",\n            \"amount\": 35,\n            \"currency\": \"AED\",\n            \"reason_code\": \"DUPLICATED_PAYMENT\",\n            \"description\": \"Refund issued for Order NO. 21342322123\",\n            \"external_reference\": \"21451234567\",\n            \"beneficiary\": {\n                \"name\": \"Dorsey Benito Cummerata\",\n                \"iban\": \"AE430351735098528749489\",\n                \"account_id\": \"07452743-13bb-4b87-a112-3a952a0c2211\",\n                \"city\": \"Dubai\"\n            },\n            \"created_at\": \"2026-05-13T11:50:42.625199Z\",\n            \"created_by\": \"edge-gateway\",\n            \"actioned_by\": \"edge-gateway\",\n            \"refund_intent_id\": null\n        }\n    ],\n    \"page\": {\n        \"number\": 0,\n        \"size\": 50,\n        \"total_elements\": 1,\n        \"total_pages\": 1,\n        \"sort\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Refunds",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"payment_id\": \"{{payment_id}}\",\n        \"amount\": 10,\n        \"currency\": \"AED\",\n        \"reason_code\": \"DUPLICATED_PAYMENT\", // CUSTOMER_REQUEST OR DUPLICATED_PAYMENT OR FRAUDULENT_PAYMENT OR ORDER_CANCELLED\n        \"description\": \"Refund issued for Order NO. 21342322123\",\n        \"external_reference\": \"21451234567\"\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{sandbox_host}}/payouts/refunds",
+              "host": [
+                "{{sandbox_host}}"
+              ],
+              "path": [
+                "payouts",
+                "refunds"
+              ]
+            },
+            "description": "Creates and queues a refund payment for approval or rejection. Refunds are always returned to the originating account of the corresponding payment. The total refund amount cannot exceed the original payment. For processing amounts greater than the original payment, please refer to payouts. Reason code can be one of the accepted values: CUSTOMER_REQUEST OR DUPLICATED_PAYMENT OR FRAUDULENT_PAYMENT OR ORDER_CANCELLED."
+          },
+          "response": [
+            {
+              "name": "Create Refunds",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "content-type",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "lean-app-token",
+                    "value": "45b23411-76b9-4f26-92dd-ff505d21060e",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n    {\n        \"payment_id\": \"{{payment_id}}\",\n        \"amount\": 35,\n        \"currency\": \"AED\",\n        \"reason_code\": \"DUPLICATED_PAYMENT\", // CUSTOMER_REQUEST OR DUPLICATED_PAYMENT OR FRAUDULENT_PAYMENT OR ORDER_CANCELLED\n        \"description\": \"Refund issued for Order NO. 21342322123\",\n        \"external_reference\": \"21451234567\"\n    }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/refunds",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "refunds"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 11:50:42 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "429"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fb172730df857f8-MRS"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "gkNxrzrGBTVKArBG"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "51910a459f539646adadc88c233bb550"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"refund_id\": \"6ab2ec23-b8fb-49af-9f3c-917368121a1d\",\n        \"payment_id\": \"23ff863d-6a00-490b-9ba2-5188dcc5bcac\",\n        \"status\": \"CREATED\",\n        \"amount\": 35,\n        \"currency\": \"AED\",\n        \"reason_code\": \"DUPLICATED_PAYMENT\",\n        \"description\": \"Refund issued for Order NO. 21342322123\",\n        \"external_reference\": \"21451234567\",\n        \"beneficiary\": {\n            \"name\": \"Dorsey Benito Cummerata\",\n            \"iban\": \"AE430351735098528749489\",\n            \"account_id\": \"07452743-13bb-4b87-a112-3a952a0c2211\",\n            \"city\": \"Dubai\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Process Refunds",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n[\n  {\n    \"refund_id\": \"{{refund_id}}\",\n    \"status\": \"APPROVED\"  // APPROVED or REJECTED\n  }\n]\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{sandbox_host}}/payouts/refunds",
+              "host": [
+                "{{sandbox_host}}"
+              ],
+              "path": [
+                "payouts",
+                "refunds"
+              ]
+            },
+            "description": "Updates the refund status based on the approver's (or checker's) confirmation or rejection. This serves as a fail-safe mechanism to validate the refund decision after the transaction is initiated, rather than processing it immediately."
+          },
+          "response": [
+            {
+              "name": "Process Refunds",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "content-type",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authorization}}",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "lean-app-token",
+                    "value": "45b23411-76b9-4f26-92dd-ff505d21060e",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\n[\n  {\n    \"refund_id\": \"{{refund_id}}\",\n    \"status\": \"APPROVED\"  // APPROVED or REJECTED\n  }\n]\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{sandbox_host}}/payouts/refunds",
+                  "host": [
+                    "{{sandbox_host}}"
+                  ],
+                  "path": [
+                    "payouts",
+                    "refunds"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 13 May 2026 11:54:55 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "lean-correlation-id",
+                  "value": "twqtYEbaWUQVITUG"
+                },
+                {
+                  "key": "lean-trace-id",
+                  "value": "b1ff9c569f3eb755f2cc3410cee5769b"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9fb178a08ff611c1-MRS"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"refund_id\": \"6ab2ec23-b8fb-49af-9f3c-917368121a1d\",\n        \"status\": \"APPROVED\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get Refund Reasons",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{sandbox_host}}/payouts/refunds/reasons",
+              "host": [
+                "{{sandbox_host}}"
+              ],
+              "path": [
+                "payouts",
+                "refunds",
+                "reasons"
+              ]
+            },
+            "description": "Returns a list of valid reason codes that can be used when creating a refund."
+          },
+          "response": []
         }
       ]
     }
