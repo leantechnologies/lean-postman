@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "f98bc886-2a7a-40e9-9743-64954ef6f13f",
+    "_postman_id": "d77af9b5-5ee7-4e93-862d-fbc0b5546a5b",
     "name": "Lean API - KSA",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "33426666"
+    "_exporter_id": "32824512"
   },
   "item": [
     {
@@ -1420,6 +1420,48 @@
                           ]
                         },
                         "description": "The Get Accounts endpoint retrieves a list of bank accounts that have been linked by a user via LinkSDK, identified by their entity_id.\nEach account object contains fields such as account_id, account status, currency, account_sub_type, account identifiers (such as IBAN, ACCOUNT_NUMBER, and NATIONAL_ID) and other data points related accounts. \nYou can use the resulting account_ids to query additional financial data through other Lean APIs such as transactions, balances, beneficiaries, and other data APIs.\n"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "Get Account",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer eyJraWQiOiIxYjIzZjRjNy03NDRkLTQ5ZGItOGVkMy0xM2NlZDZjMDQ0ZDYiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIwYzAyMmM4My00OGZkLTRkOWQtYTY2Yy0xYjkwMzgyYjk4NzIiLCJhdWQiOiJodHRwczovL3NhbmRib3guc2EubGVhbnRlY2gubWUiLCJuYmYiOjE3Nzg2OTM4OTcsInNjb3BlIjpbImN1c3RvbWVyLnJlYWQiLCJjdXN0b21lci53cml0ZSIsImRlc3RpbmF0aW9uLndyaXRlIiwicmVwb3J0LnJlYWQiLCJiYW5rLnJlYWQiLCJ3ZWJob29rLnJlYWQiLCJwYXltZW50LnJlYWQiLCJpbnRlbnQud3JpdGUiLCJkZXN0aW5hdGlvbi5yZWFkIiwicGF5b3V0LndyaXRlIiwiZGVwb3NpdC5yZWFkIiwicmVwb3J0LndyaXRlIiwiZGF0YS5yZWFkIiwicGF5b3V0LnJlYWQiLCJyZWNvbmNpbGlhdGlvbi5yZWFkIiwiZmlsZS5yZWFkIl0sImlzcyI6Imh0dHBzOi8vYXV0aC5zYW5kYm94LnNhLmxlYW50ZWNoLm1lIiwiZXhwIjoxNzc4Njk3NDk3LCJpYXQiOjE3Nzg2OTM4OTcsImp0aSI6Ijg3OGI2Y2VlLWNjZTYtNDUzNC05ZTUzLTIzYTQ5NmIyMjQzMiIsImFwcGxpY2F0aW9ucyI6W3siaWQiOiIwYzAyMmM4My00OGZkLTRkOWQtYTY2Yy0xYjkwMzgyYjk4NzIifV19.eaqLLvFPReF0M1NAb29_oC82fPxARo7E6Uw7QgpDn3dBl7kzwuDW933RVjm0lCL4btB5_z1Q1VmE261p7SqHh8S6OeP-eycoFmGKwHKCrEfjoSxUA6d8bMvBCyRPQC57oOrD8G5AJjXL_CyOB6C358j5iFiGx7hBmLah_PNZVQbYVZ2ltdAP2jMjiHtV6u_iZLVE-L0fGnvbxdTRgTBjO40gvB6SX7Fhevjv90S17flnHylbpg0k6Bi3bUWv4TtngHaTGfYNEObUjLdWPt-RmQL-kr9A8buCJxmxlq9eC1u-Lqyw81eA12iQjX7rafL8LoDwvrR2LWjvx0aMLLvTFw"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/data/v2/accounts?page=0&size=50&entity_id={{entity_id}}",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "data",
+                            "v2",
+                            "accounts"
+                          ],
+                          "query": [
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "50"
+                            },
+                            {
+                              "key": "entity_id",
+                              "value": "{{entity_id}}"
+                            }
+                          ]
+                        }
                       },
                       "response": [
                         {
@@ -6264,6 +6306,1061 @@
           "name": "Account Verification API",
           "item": [
             {
+              "name": "Account Verification - SA (Saudi Arabia)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA2810000011100000461309\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ABBAS AL-SHEIKH\"\n        },\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/verifications/v1/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "verifications",
+                    "v1",
+                    "accounts"
+                  ]
+                },
+                "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+              },
+              "response": [
+                {
+                  "name": "SA (Saudi Arabia) - OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA2810000011100000461309\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ABBAS AL-SHEIKH\"\n        },\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:03:28 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "LCcBpOTOqOpAzuYW"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "440997e6e4fefac8e7d7e5accbad3090"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"a9c81b37-634d-4329-8e64-4c72bb49af66\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:03:28.226844822Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": true,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Saudi National Bank\",\n                \"ar\": \"البنك الأهلي السعودي\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"NCBKSAJE\"\n                }\n            ]\n        },\n        \"account_status\": \"ACTIVE\",\n        \"account_holder_name\": \"ABBAS AL-SHEIKH\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
+                },
+                {
+                  "name": "SA (Saudi Arabia) - BLOCKED - Adam Ahmed",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA1300GQO2OTVMEJ3885Y3TO\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1106972886\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:04:55 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "RFQeOJuLuOInogSR"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "ea4e0dde0200f1e79795e21c5a18065d"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"timestamp\": \"2026-05-12T09:04:55.696288660Z\",\n    \"status\": \"DATA_NOT_FOUND\",\n    \"message\": \"The data requested could not be found\",\n    \"metadata\": null\n}"
+                },
+                {
+                  "name": "SA (Saudi Arabia) - CLOSED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA3076747147122249133391\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:04:56 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "mDhvhZGPBEQAaiLT"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "1e4f85d8a9bd1acaed50b5afcbca3c7a"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"2984abae-5917-4cd9-94a8-73756de8c563\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:04:56.621309455Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": false,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Bank Muscat\",\n                \"ar\": \"بنك مسقط\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"BMUSSARI\"\n                }\n            ]\n        },\n        \"account_status\": \"CLOSED\",\n        \"account_holder_name\": \"Cl**** Ac**** Ho****\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
+                },
+                {
+                  "name": "SA (Saudi Arabia) - IN_LIQUIDATION",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA4576615857476891197381\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:04:57 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "FIdMBZeIlPBdUfYD"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "b8e37981465522b36e4b662f5ddd8b46"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"4d917749-ea52-48ad-ae8c-7e052d62fbde\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:04:57.636325942Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": false,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Bank Muscat\",\n                \"ar\": \"بنك مسقط\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"BMUSSARI\"\n                }\n            ]\n        },\n        \"account_status\": \"IN_LIQUIDATION\",\n        \"account_holder_name\": \"Li**** Ac**** Ho****\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
+                },
+                {
+                  "name": "SA (Saudi Arabia) - LEAN_ERROR",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA7665000000124A60749002\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:04:58 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "NKxZtTEfEcHQrNMJ"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "a8f61e0da83c32e426bc70ec5fbc3e2f"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"System error occurred\",\n    \"timestamp\": \"2026-05-12T09:04:58.270907719Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"0bb38ce6-0675-4608-b4ee-ca3828974429\",\n    \"status_detail\": {\n        \"granular_status_code\": \"LEAN_ERROR\",\n        \"status_additional_info\": \"Internal system error occurred\"\n    }\n}"
+                },
+                {
+                  "name": "SA (Saudi Arabia) - BANK_ISSUE",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA82550000000M1795800177\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:04:59 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "ZDnfaOdTgAXSkupX"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "ec1f65b81eff26406a4bdc29362dfeb6"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank temporarily unavailable\",\n    \"timestamp\": \"2026-05-12T09:04:59.282004104Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"0dc05b79-b008-4361-86a7-218d21760fa2\",\n    \"status_detail\": {\n        \"granular_status_code\": \"BANK_ISSUE\",\n        \"status_additional_info\": \"Bank is experiencing technical issues\"\n    }\n}"
+                },
+                {
+                  "name": "SA (Saudi Arabia) - UNSUPPORTED_BY_BANK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA0405000068201235335000\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:05:00 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "kzBTzdnIILkukIcz"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "4e2456d82b8608cb5c528ad602f7646f"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank verification not supported\",\n    \"timestamp\": \"2026-05-12T09:05:00.277151750Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"b3c08bc0-79a1-4478-b7d1-fdffd5f15864\",\n    \"status_detail\": {\n        \"granular_status_code\": \"UNSUPPORTED_BY_BANK\",\n        \"status_additional_info\": \"This bank does not support verification\"\n    }\n}"
+                },
+                {
+                  "name": "SA (Saudi Arabia) - DISABLED_BY_LEAN",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA5080000146608010554454\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:05:00 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "KoplLaVGcjlAfsJt"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "db1a2c0a8b8c4060b93e185dd15a108b"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Verification temporarily disabled\",\n    \"timestamp\": \"2026-05-12T09:05:00.787091230Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"faa2aad2-b97a-47d8-9675-fdf24f1f3f89\",\n    \"status_detail\": {\n        \"granular_status_code\": \"DISABLED_BY_LEAN\",\n        \"status_additional_info\": \"Verification disabled for this bank\"\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Account Verification - AE (United Arab Emirates)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE420260001015819612801\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ADAM AHMED\"\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/verifications/v1/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "verifications",
+                    "v1",
+                    "accounts"
+                  ]
+                },
+                "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+              },
+              "response": [
+                {
+                  "name": "AE (United Arab Emirates) - OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE420260001015819612801\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ADAM AHMED\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:03:28 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "NuexnDdBDAdRkORM"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "af24c760c70f6cb3dd73fa62f29098bd"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"c93d3c94-443b-4952-853d-e6963ec2cf5a\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:03:28.686385993Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": true,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Emirates NBD Bank PJSC\",\n                \"ar\": \"بنك الإمارات دبي الوطني\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"EBILAEADXXX\"\n                }\n            ]\n        },\n        \"account_status\": \"ACTIVE\",\n        \"account_holder_name\": \"ADAM AHMED\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
+                },
+                {
+                  "name": "AE (United Arab Emirates) - BLOCKED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE810030012459313920001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"BLOCKED USER\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:07:36 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "PaWdKkffgBhrDNDO"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "19b68441d3a50f840417280d9ecbb207"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"3352a4f1-84fd-41a3-a445-d105b2985ca6\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:07:36.566791257Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": false,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Abu Dhabi Commercial Bank\",\n                \"ar\": \"بنك أبوظبي التجاري\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"ADCBAEAAXXX\"\n                }\n            ]\n        },\n        \"account_status\": \"BLOCKED\",\n        \"account_holder_name\": \"BLOCKED USER\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
+                },
+                {
+                  "name": "AE (United Arab Emirates) - LEAN_ERROR",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE380030012459313810001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ERROR TEST\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:07:37 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "CImxdadfBcjBhZID"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "77f78c54b914aadd357a657272adeee0"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"System error occurred\",\n    \"timestamp\": \"2026-05-12T09:07:37.368007344Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"88cbe207-d981-4074-aeba-1e877fdf5c55\",\n    \"status_detail\": {\n        \"granular_status_code\": \"LEAN_ERROR\",\n        \"status_additional_info\": \"Internal system error occurred\"\n    }\n}"
+                },
+                {
+                  "name": "AE (United Arab Emirates) - BANK_ISSUE",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE160030011522789920001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"BANK ERROR TEST\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:07:37 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "xrnSYzLFerxzQcxn"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "9a4e8fdc7ef508dbdc8b5e4f16f3ac76"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank temporarily unavailable\",\n    \"timestamp\": \"2026-05-12T09:07:37.885775134Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"e8586e94-fe55-4cba-beff-04127dabed43\",\n    \"status_detail\": {\n        \"granular_status_code\": \"BANK_ISSUE\",\n        \"status_additional_info\": \"Bank is experiencing technical issues\"\n    }\n}"
+                },
+                {
+                  "name": "AE (United Arab Emirates) - UNSUPPORTED_BY_BANK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE420500000000028645064\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"UNSUPPORTED TEST\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:07:38 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "KBWOhVKdinxbrEjn"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "b60ecff2c2d2e0a65200f4ab635fdd61"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank verification not supported\",\n    \"timestamp\": \"2026-05-12T09:07:38.204420620Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"2f556abf-0cb7-4ee9-a961-e783459a22a7\",\n    \"status_detail\": {\n        \"granular_status_code\": \"UNSUPPORTED_BY_BANK\",\n        \"status_additional_info\": \"This bank does not support verification\"\n    }\n}"
+                },
+                {
+                  "name": "AE (United Arab Emirates) - DISABLED_BY_LEAN",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE100500000000028538649\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"DISABLED TEST\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 12 May 2026 09:07:39 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "qUNBMvfRtoLrCcHo"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "63a9fe7f2d81de02f3989dc70a8f4d38"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Verification temporarily disabled\",\n    \"timestamp\": \"2026-05-12T09:07:38.954182161Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"3904048a-f0a3-41af-a665-6c9c667315a3\",\n    \"status_detail\": {\n        \"granular_status_code\": \"DISABLED_BY_LEAN\",\n        \"status_additional_info\": \"Verification disabled for this bank\"\n    }\n}"
+                },
+                {
+                  "name": "AE (United Arab Emirates) - GIVEN_INPUT_CANNOT_BE_VERIFIED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE550030011666123450001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"INPUT CANNOT BE VERIFIED TEST\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 May 2026 04:32:13 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "GbnCnUxQYpVtKwLs"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "7f4a8e15d3c7b2906a4f1d3e8c5b0a92"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Account cannot be verified in this case. Please do not retry.\",\n    \"timestamp\": \"2026-05-13T04:32:13.841300255Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"56866954-5eed-4ced-a5d9-e2cdfdb6d90f\",\n    \"status_detail\": {\n        \"granular_status_code\": \"GIVEN_INPUT_CANNOT_BE_VERIFIED\",\n        \"status_additional_info\": \"Account cannot be verified in this case. Please do not retry.\"\n    }\n}"
+                }
+              ]
+            },
+            {
               "name": "Account Verification - AR (Argentina)",
               "request": {
                 "method": "POST",
@@ -8887,1061 +9984,6 @@
                   "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"b1b7ee34-192c-4edc-9d4f-3782de963e0a\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:03:27.71258197Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": true,\n        \"matching\": null,\n        \"bank_details\": null,\n        \"account_status\": \"ACTIVE\",\n        \"account_holder_name\": \"CHAD LE CLOS\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
                 }
               ]
-            },
-            {
-              "name": "Account Verification - SA (Saudi Arabia)",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA2810000011100000461309\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ABBAS AL-SHEIKH\"\n        },\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                  "options": {
-                    "raw": {
-                      "headerFamily": "json",
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/verifications/v1/accounts",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "verifications",
-                    "v1",
-                    "accounts"
-                  ]
-                },
-                "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-              },
-              "response": [
-                {
-                  "name": "SA (Saudi Arabia) - OK",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA2810000011100000461309\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ABBAS AL-SHEIKH\"\n        },\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:03:28 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "LCcBpOTOqOpAzuYW"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "440997e6e4fefac8e7d7e5accbad3090"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"a9c81b37-634d-4329-8e64-4c72bb49af66\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:03:28.226844822Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": true,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Saudi National Bank\",\n                \"ar\": \"البنك الأهلي السعودي\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"NCBKSAJE\"\n                }\n            ]\n        },\n        \"account_status\": \"ACTIVE\",\n        \"account_holder_name\": \"ABBAS AL-SHEIKH\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
-                },
-                {
-                  "name": "SA (Saudi Arabia) - BLOCKED - Adam Ahmed",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA1300GQO2OTVMEJ3885Y3TO\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1106972886\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "Not Found",
-                  "code": 404,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:04:55 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "RFQeOJuLuOInogSR"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "ea4e0dde0200f1e79795e21c5a18065d"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"timestamp\": \"2026-05-12T09:04:55.696288660Z\",\n    \"status\": \"DATA_NOT_FOUND\",\n    \"message\": \"The data requested could not be found\",\n    \"metadata\": null\n}"
-                },
-                {
-                  "name": "SA (Saudi Arabia) - CLOSED",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA3076747147122249133391\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:04:56 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "mDhvhZGPBEQAaiLT"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "1e4f85d8a9bd1acaed50b5afcbca3c7a"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"2984abae-5917-4cd9-94a8-73756de8c563\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:04:56.621309455Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": false,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Bank Muscat\",\n                \"ar\": \"بنك مسقط\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"BMUSSARI\"\n                }\n            ]\n        },\n        \"account_status\": \"CLOSED\",\n        \"account_holder_name\": \"Cl**** Ac**** Ho****\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
-                },
-                {
-                  "name": "SA (Saudi Arabia) - IN_LIQUIDATION",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA4576615857476891197381\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:04:57 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "FIdMBZeIlPBdUfYD"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "b8e37981465522b36e4b662f5ddd8b46"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"4d917749-ea52-48ad-ae8c-7e052d62fbde\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:04:57.636325942Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": false,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Bank Muscat\",\n                \"ar\": \"بنك مسقط\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"BMUSSARI\"\n                }\n            ]\n        },\n        \"account_status\": \"IN_LIQUIDATION\",\n        \"account_holder_name\": \"Li**** Ac**** Ho****\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
-                },
-                {
-                  "name": "SA (Saudi Arabia) - LEAN_ERROR",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA7665000000124A60749002\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:04:58 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "NKxZtTEfEcHQrNMJ"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "a8f61e0da83c32e426bc70ec5fbc3e2f"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"System error occurred\",\n    \"timestamp\": \"2026-05-12T09:04:58.270907719Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"0bb38ce6-0675-4608-b4ee-ca3828974429\",\n    \"status_detail\": {\n        \"granular_status_code\": \"LEAN_ERROR\",\n        \"status_additional_info\": \"Internal system error occurred\"\n    }\n}"
-                },
-                {
-                  "name": "SA (Saudi Arabia) - BANK_ISSUE",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA82550000000M1795800177\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:04:59 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "ZDnfaOdTgAXSkupX"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "ec1f65b81eff26406a4bdc29362dfeb6"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank temporarily unavailable\",\n    \"timestamp\": \"2026-05-12T09:04:59.282004104Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"0dc05b79-b008-4361-86a7-218d21760fa2\",\n    \"status_detail\": {\n        \"granular_status_code\": \"BANK_ISSUE\",\n        \"status_additional_info\": \"Bank is experiencing technical issues\"\n    }\n}"
-                },
-                {
-                  "name": "SA (Saudi Arabia) - UNSUPPORTED_BY_BANK",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA0405000068201235335000\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:05:00 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "kzBTzdnIILkukIcz"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "4e2456d82b8608cb5c528ad602f7646f"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank verification not supported\",\n    \"timestamp\": \"2026-05-12T09:05:00.277151750Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"b3c08bc0-79a1-4478-b7d1-fdffd5f15864\",\n    \"status_detail\": {\n        \"granular_status_code\": \"UNSUPPORTED_BY_BANK\",\n        \"status_additional_info\": \"This bank does not support verification\"\n    }\n}"
-                },
-                {
-                  "name": "SA (Saudi Arabia) - DISABLED_BY_LEAN",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"SA\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"SA5080000146608010554454\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"NATIONAL_ID\",\n            \"value\": \"1234567890\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for Saudi Arabia (SA). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:05:00 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "KoplLaVGcjlAfsJt"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "db1a2c0a8b8c4060b93e185dd15a108b"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Verification temporarily disabled\",\n    \"timestamp\": \"2026-05-12T09:05:00.787091230Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"faa2aad2-b97a-47d8-9675-fdf24f1f3f89\",\n    \"status_detail\": {\n        \"granular_status_code\": \"DISABLED_BY_LEAN\",\n        \"status_additional_info\": \"Verification disabled for this bank\"\n    }\n}"
-                }
-              ]
-            },
-            {
-              "name": "Account Verification - AE (United Arab Emirates)",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE420260001015819612801\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ADAM AHMED\"\n        }\n    ]\n}",
-                  "options": {
-                    "raw": {
-                      "headerFamily": "json",
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{baseUrl}}/verifications/v1/accounts",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "verifications",
-                    "v1",
-                    "accounts"
-                  ]
-                },
-                "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-              },
-              "response": [
-                {
-                  "name": "AE (United Arab Emirates) - OK",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE420260001015819612801\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ADAM AHMED\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:03:28 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "NuexnDdBDAdRkORM"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "af24c760c70f6cb3dd73fa62f29098bd"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"c93d3c94-443b-4952-853d-e6963ec2cf5a\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:03:28.686385993Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": true,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Emirates NBD Bank PJSC\",\n                \"ar\": \"بنك الإمارات دبي الوطني\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"EBILAEADXXX\"\n                }\n            ]\n        },\n        \"account_status\": \"ACTIVE\",\n        \"account_holder_name\": \"ADAM AHMED\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
-                },
-                {
-                  "name": "AE (United Arab Emirates) - BLOCKED",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE810030012459313920001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"BLOCKED USER\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:07:36 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "PaWdKkffgBhrDNDO"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "19b68441d3a50f840417280d9ecbb207"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"OK\",\n    \"results_id\": \"3352a4f1-84fd-41a3-a445-d105b2985ca6\",\n    \"message\": \"Data successfully retrieved\",\n    \"meta\": null,\n    \"timestamp\": \"2026-05-12T09:07:36.566791257Z\",\n    \"status_detail\": null,\n    \"verifications\": {\n        \"account_ownership_verified\": false,\n        \"matching\": null,\n        \"bank_details\": {\n            \"bank_name\": {\n                \"en\": \"Abu Dhabi Commercial Bank\",\n                \"ar\": \"بنك أبوظبي التجاري\"\n            },\n            \"bank_identifiers\": [\n                {\n                    \"type\": \"BIC\",\n                    \"value\": \"ADCBAEAAXXX\"\n                }\n            ]\n        },\n        \"account_status\": \"BLOCKED\",\n        \"account_holder_name\": \"BLOCKED USER\",\n        \"account_currency\": null,\n        \"verification_method\": \"CONFIRMATION_OF_PAYEE_SERVICE\"\n    }\n}"
-                },
-                {
-                  "name": "AE (United Arab Emirates) - LEAN_ERROR",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE380030012459313810001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"ERROR TEST\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:07:37 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "CImxdadfBcjBhZID"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "77f78c54b914aadd357a657272adeee0"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"System error occurred\",\n    \"timestamp\": \"2026-05-12T09:07:37.368007344Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"88cbe207-d981-4074-aeba-1e877fdf5c55\",\n    \"status_detail\": {\n        \"granular_status_code\": \"LEAN_ERROR\",\n        \"status_additional_info\": \"Internal system error occurred\"\n    }\n}"
-                },
-                {
-                  "name": "AE (United Arab Emirates) - BANK_ISSUE",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE160030011522789920001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"BANK ERROR TEST\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:07:37 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "xrnSYzLFerxzQcxn"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "9a4e8fdc7ef508dbdc8b5e4f16f3ac76"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank temporarily unavailable\",\n    \"timestamp\": \"2026-05-12T09:07:37.885775134Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"e8586e94-fe55-4cba-beff-04127dabed43\",\n    \"status_detail\": {\n        \"granular_status_code\": \"BANK_ISSUE\",\n        \"status_additional_info\": \"Bank is experiencing technical issues\"\n    }\n}"
-                },
-                {
-                  "name": "AE (United Arab Emirates) - UNSUPPORTED_BY_BANK",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE420500000000028645064\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"UNSUPPORTED TEST\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:07:38 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "KBWOhVKdinxbrEjn"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "b60ecff2c2d2e0a65200f4ab635fdd61"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Bank verification not supported\",\n    \"timestamp\": \"2026-05-12T09:07:38.204420620Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"2f556abf-0cb7-4ee9-a961-e783459a22a7\",\n    \"status_detail\": {\n        \"granular_status_code\": \"UNSUPPORTED_BY_BANK\",\n        \"status_additional_info\": \"This bank does not support verification\"\n    }\n}"
-                },
-                {
-                  "name": "AE (United Arab Emirates) - DISABLED_BY_LEAN",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE100500000000028538649\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"DISABLED TEST\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Tue, 12 May 2026 09:07:39 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "qUNBMvfRtoLrCcHo"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "63a9fe7f2d81de02f3989dc70a8f4d38"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Verification temporarily disabled\",\n    \"timestamp\": \"2026-05-12T09:07:38.954182161Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"3904048a-f0a3-41af-a665-6c9c667315a3\",\n    \"status_detail\": {\n        \"granular_status_code\": \"DISABLED_BY_LEAN\",\n        \"status_additional_info\": \"Verification disabled for this bank\"\n    }\n}"
-                },
-                {
-                  "name": "AE (United Arab Emirates) - GIVEN_INPUT_CANNOT_BE_VERIFIED",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      },
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE550030011666123450001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"INPUT CANNOT BE VERIFIED TEST\"\n        }\n    ]\n}",
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/verifications/v1/accounts",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "verifications",
-                        "v1",
-                        "accounts"
-                      ]
-                    },
-                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "Date",
-                      "value": "Wed, 13 May 2026 04:32:13 GMT"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "strict-transport-security",
-                      "value": "max-age=31536000; includeSubDomains"
-                    },
-                    {
-                      "key": "lean-correlation-id",
-                      "value": "GbnCnUxQYpVtKwLs"
-                    },
-                    {
-                      "key": "lean-trace-id",
-                      "value": "7f4a8e15d3c7b2906a4f1d3e8c5b0a92"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Account cannot be verified in this case. Please do not retry.\",\n    \"timestamp\": \"2026-05-13T04:32:13.841300255Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"56866954-5eed-4ced-a5d9-e2cdfdb6d90f\",\n    \"status_detail\": {\n        \"granular_status_code\": \"GIVEN_INPUT_CANNOT_BE_VERIFIED\",\n        \"status_additional_info\": \"Account cannot be verified in this case. Please do not retry.\"\n    }\n}"
-                }
-              ]
             }
           ]
         },
@@ -11977,10 +12019,6 @@
       ]
     },
     {
-      "name": "Payouts",
-      "item": []
-    },
-    {
       "name": "Insights",
       "item": [
         {
@@ -12056,7 +12094,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -12175,7 +12213,7 @@
               },
               "status": "Bad Request",
               "code": 400,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -12298,7 +12336,7 @@
               },
               "status": "Not Found",
               "code": 404,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -12445,7 +12483,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -12618,7 +12656,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -12739,7 +12777,7 @@
               },
               "status": "Bad Request",
               "code": 400,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -12866,7 +12904,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -13029,7 +13067,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -13190,7 +13228,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -13351,7 +13389,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -13439,7 +13477,10 @@
           "name": "Freelancer cashflow",
           "request": {
             "method": "GET",
-            "header": []
+            "header": [],
+            "url": {
+              "raw": ""
+            }
           },
           "response": [
             {
@@ -13473,7 +13514,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -13634,6 +13675,14 @@
     {
       "key": "customer_access_token",
       "value": ""
+    },
+    {
+      "key": "production_baseUrl",
+      "value": "https://api2.sa.leantech.me"
+    },
+    {
+      "key": "production_auth_baseUrl",
+      "value": "https://auth.sa.leantech.me"
     }
   ]
 }

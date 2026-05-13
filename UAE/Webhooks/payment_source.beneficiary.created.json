@@ -1,10 +1,4 @@
 {
-    "id": "19ae8b4d-1461-4c00-aadd-8961c6c0b607",
-    "webhook_message_id": "0971c86f-8031-4ca0-8ada-afc743216a0b",
-    "status": "OK",
-    "event_type": "payment_source.beneficiary.created",
-    "timestamp": "2026-05-13T10:50:10.419312Z",
-    "request": {
       "type": "payment_source.beneficiary.created",
       "message": "A beneficiary was added for a payment source.",
       "payload": {
@@ -17,6 +11,4 @@
       },
       "event_id": "0971c86f-8031-4ca0-8ada-afc743216a0b",
       "timestamp": "2026-05-13T10:50:10.413273706Z"
-    },
-    "response": null
   }

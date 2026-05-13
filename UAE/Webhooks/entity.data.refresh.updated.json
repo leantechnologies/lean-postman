@@ -1,10 +1,4 @@
 {
-  "id": "350d941f-5e97-40fe-8a4a-d1cb72f292f6",
-  "webhook_message_id": "29296847-0297-47e2-a67f-19a73a7a2af3",
-  "status": "OK",
-  "event_type": "entity.data.refresh.updated",
-  "timestamp": "2026-05-12T15:24:30.125576Z",
-  "request": {
     "type": "entity.data.refresh.updated",
     "message": "An entity data refresh state has been updated.",
     "payload": {
@@ -157,6 +151,4 @@
     },
     "event_id": "29296847-0297-47e2-a67f-19a73a7a2af3",
     "timestamp": "2026-05-12T15:23:02.308959607Z"
-  },
-  "response": null
 }

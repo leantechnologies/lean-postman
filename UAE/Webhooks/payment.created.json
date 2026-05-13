@@ -1,10 +1,4 @@
 {
-    "id": "a89ac61a-c829-41bf-9f88-8b5df2386f32",
-    "webhook_message_id": "f1d73c8d-d849-48c7-9daf-aa9b0dc8595c",
-    "status": "OK",
-    "event_type": "payment.created",
-    "timestamp": "2026-05-12T15:41:00.593069Z",
-    "request": {
       "type": "payment.created",
       "message": "A payment object has been created.",
       "payload": {
@@ -23,6 +17,4 @@
       },
       "event_id": "f1d73c8d-d849-48c7-9daf-aa9b0dc8595c",
       "timestamp": "2026-05-12T15:41:00.586527614Z"
-    },
-    "response": null
   }

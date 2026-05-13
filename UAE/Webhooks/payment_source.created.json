@@ -1,10 +1,4 @@
 {
-    "id": "134d8d0b-c5ad-4251-b2a5-c9466305dd41",
-    "webhook_message_id": "ed756624-88d9-43b9-9b42-ed05caa6e006",
-    "status": "OK",
-    "event_type": "payment_source.created",
-    "timestamp": "2026-05-13T10:50:10.482778Z",
-    "request": {
       "type": "payment_source.created",
       "message": "A payment source was pre-authorized by your customer.",
       "payload": {
@@ -17,6 +11,4 @@
       },
       "event_id": "ed756624-88d9-43b9-9b42-ed05caa6e006",
       "timestamp": "2026-05-13T10:50:10.476351058Z"
-    },
-    "response": null
   }

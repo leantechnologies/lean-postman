@@ -1,10 +1,5 @@
 {
-    "id": "c9e7cd58-e250-4fa9-9bb2-af0a512b5e71",
-    "webhook_message_id": "28f729fe-9c36-426f-959b-65e69303d901",
-    "status": "OK",
-    "event_type": "entity.created",
-    "timestamp": "2026-05-12T15:40:36.426949Z",
-    "request": {
+    
       "type": "entity.created",
       "message": "An entity object has been created.",
       "payload": {
@@ -28,6 +23,4 @@
       },
       "event_id": "28f729fe-9c36-426f-959b-65e69303d901",
       "timestamp": "2026-05-12T15:40:36.398576427Z"
-    },
-    "response": null
   }

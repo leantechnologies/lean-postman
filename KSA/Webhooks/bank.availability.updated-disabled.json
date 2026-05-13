@@ -1,7 +1,7 @@
 {
   "type": "bank.availability.updated",
   "payload": {
-    "identifier": "FAB_UAE",
+    "identifier": "LEA1_SAMAOB_SAU",
     "availability": {
       "active": { "payments": false, "data": false },
       "enabled": { "payments": true, "data": true }
