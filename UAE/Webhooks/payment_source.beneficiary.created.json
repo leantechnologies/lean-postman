@@ -1,0 +1,22 @@
+{
+    "id": "19ae8b4d-1461-4c00-aadd-8961c6c0b607",
+    "webhook_message_id": "0971c86f-8031-4ca0-8ada-afc743216a0b",
+    "status": "OK",
+    "event_type": "payment_source.beneficiary.created",
+    "timestamp": "2026-05-13T10:50:10.419312Z",
+    "request": {
+      "type": "payment_source.beneficiary.created",
+      "message": "A beneficiary was added for a payment source.",
+      "payload": {
+        "id": "5d76abbb-d860-458d-b836-0f12104b8d78",
+        "status": "ACTIVE",
+        "customer_id": "34d41026-3385-4e14-bd79-56086c2eda34",
+        "payment_source_id": "3c81b339-e72e-4ef1-9cdc-a012a7057858",
+        "payment_destination_id": "b497d078-da47-488c-ba63-cd602f788262",
+        "payment_source_bank_identifier": "LEAN_OF_RETAIL_UAE"
+      },
+      "event_id": "0971c86f-8031-4ca0-8ada-afc743216a0b",
+      "timestamp": "2026-05-13T10:50:10.413273706Z"
+    },
+    "response": null
+  }

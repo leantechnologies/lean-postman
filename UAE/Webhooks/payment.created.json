@@ -1,0 +1,28 @@
+{
+    "id": "a89ac61a-c829-41bf-9f88-8b5df2386f32",
+    "webhook_message_id": "f1d73c8d-d849-48c7-9daf-aa9b0dc8595c",
+    "status": "OK",
+    "event_type": "payment.created",
+    "timestamp": "2026-05-12T15:41:00.593069Z",
+    "request": {
+      "type": "payment.created",
+      "message": "A payment object has been created.",
+      "payload": {
+        "id": "c5bbaa0e-27b4-4767-896e-efd4b0d3d2ec",
+        "amount": 25,
+        "reason": "testing",
+        "status": "ACCEPTED_BY_BANK",
+        "currency": "AED",
+        "metadata": {
+          "data": "meta_data_test"
+        },
+        "intent_id": "9979d193-21d7-4a40-b9ba-ee40ed9ae894",
+        "customer_id": "c16d41ab-e9d9-4416-b147-a9acadd9b6d5",
+        "payment_destination_id": "76ad0bf0-c594-4106-b83d-fc6a37966ed4",
+        "bank_transaction_reference": "payment-7200c30c-8eed-4f20-841f-2d3fbe428d86"
+      },
+      "event_id": "f1d73c8d-d849-48c7-9daf-aa9b0dc8595c",
+      "timestamp": "2026-05-12T15:41:00.586527614Z"
+    },
+    "response": null
+  }
