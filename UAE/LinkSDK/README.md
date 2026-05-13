@@ -1,15 +1,21 @@
-# Lean Link SDK (Web) 
+# Lean Link SDK (Web) — UAE `connect`
 
 A static HTML page that loads the Lean Link SDK (UAE environment) and launches the **`connect`** flow to link a customer's bank account with Lean.
 
-The SDK is shipped as a UMD bundle and attaches to the JavaScript global `window.LeanV2`.
+The SDK ships as a UMD bundle and attaches to the global `window.LeanV2`.
 
 ---
+
 ## Running the demo locally
 
-1. Open `LinkSDK-demo-UAE.html` in a browser (or serve the folder over `http://`).
-2. Fill in `app_token`, `customer_id`, and `customer_access_token` at the top of the inline `<script>` block.
-3. Click **Connect** to launch the SDK against the KSA environment.
+1. Fill in `app_token`, `customer_id`, and `customer_access_token` at the top of the inline `<script>` block.
+2. Open `LinkSDK-demo-UAE.html` in a browser (or serve the folder over `http://`).
+3. Click **Connect** to launch the SDK against the UAE environment.
+4. When configuring the redirection URLs in the connect() flow in the LinkSDK (such as success_redirect_url and failure_redirect_url), please ensure to add the URLs in Lean dashboard under **Settings** tab as follows: 
+![lean-postman-configuration](/images/redirect_urls.png)
+
+
+
 
 ## How LinkSDK is wired
 
@@ -46,7 +52,7 @@ The SDK is shipped as a UMD bundle and attaches to the JavaScript global `window
 </script>
 ```
 
-The mount point `<div id="lean-link"></div>` is **required** — the SDK looks up this element by id and renders its UI into it.
+The `<div id="lean-link"></div>` mount point is required. The SDK looks it up by id and renders into it; without it, nothing happens.
 
 ---
 
@@ -55,21 +61,17 @@ The mount point `<div id="lean-link"></div>` is **required** — the SDK looks u
 | Environment | URL |
 | ----------- | --- |
 | UAE Production | `https://cdn.leantech.me/link/sdk/web/v2/prod/ae/latest/Lean.min.js` |
-| UAE Sandbox    | Same bundle — pass `sandbox: true` in the config |
+| UAE Sandbox    | Same bundle. Pass `sandbox: true` in the config. |
 
-Pin to a specific SDK version by replacing `latest` with a fixed version segment.
+To pin a specific SDK version, replace `latest` with a fixed version segment in the URL.
 
 ---
 
 ## `connect` method
 
-`LeanV2.connect(config)` launches the Connect flow:
+`LeanV2.connect(config)` runs the Connect flow: the customer picks a bank, logs in with it, and grants the data or payments permissions you asked for.
 
-1. Customer picks a bank.
-2. Customer authenticates with the bank.
-3. Customer grants the requested data / payments permissions.
-
-The method validates the config, mounts a React app into `#lean-link`, and renders the flow. Validation errors only surface when `sandbox: true`; in production an invalid config silently aborts mounting.
+The method validates the config, mounts a React app into `#lean-link`, and renders the flow. Validation errors only surface when `sandbox: true`. In production, an invalid config silently aborts the mount, so test in sandbox first.
 
 ### Required fields
 
@@ -78,27 +80,27 @@ The method validates the config, mounts a React app into `#lean-link`, and rende
 | `app_token`   | `string`       | Your Lean application token from the Lean dashboard. |
 | `customer_id` | `string`       | Unique identifier of the end customer in your system. |
 | `permissions` | `Permission[]` | Permissions to request. Must contain at least one value. See [Permissions](#permissions). |
-| `access_token`             | `string`  | A valid Lean JWT with customer scope. When provided, the SDK skips its own auth step and uses this token as `Authorization: Bearer` on every API request. Must include an `exp` claim with at least **10 minutes** of remaining validity. |
+| `access_token`| `string`       | A valid Lean JWT with customer scope. When provided, the SDK skips its own auth step and uses this token as the `Authorization: Bearer` header on every API request. The JWT must include an `exp` claim with at least **10 minutes** of remaining validity. |
 
 ### Optional fields
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `end_user_id`              | `string`  | Your internal identifier for the end user. |
-| `customer_metadata`        | `string`  | Free-form metadata string attached to the session. |
-| `bank_identifier`          | `string`  | Pre-select a bank by its Lean identifier. |
-| `account_type`             | `"PERSONAL"` \| `"BUSINESS"` | Filter the bank list by account type. |
-| `access_from`              | `string` (ISO 8601 date) | Start of the data access window. |
-| `access_to`                | `string` (ISO 8601 date) | End of the data access window. |
-| `show_consent_explanation` | `boolean` | Show an explanation screen before the customer grants consent. |
-| `success_redirect_url`     | `string`  | URL to redirect to on successful completion (Open Finance flows). |
-| `fail_redirect_url`        | `string`  | URL to redirect to on failure / cancellation (Open Finance flows). |
-| `destination_alias`        | `string`  | Display name for the payment destination shown in the UI. |
-| `destination_avatar`       | `string` (PNG/JPG URL) | Logo URL for the payment destination shown in the UI. |
-| `sandbox`                  | `boolean` | Run against the Lean sandbox environment. |
-| `language`                 | `"en"` \| `"ar"` | Force the SDK UI language. Arabic auto-applies RTL. |
-| `customization`            | `Customization` | Theme / appearance overrides. See [Customization](#customization). |
-| `callback`                 | `(data: CallbackData) => void` | Invoked on SDK lifecycle events. See [Callback](#callback). |
+| `end_user_id`              | `string`         | Your internal identifier for the end user. |
+| `customer_metadata`        | `string`         | Free-form metadata string attached to the session. |
+| `bank_identifier`          | `string`         | Pre-select a bank by its Lean identifier. |
+| `account_type`             | `"PERSONAL"` or `"BUSINESS"` | Filter the bank list by account type. |
+| `access_from`              | `string`         | Start of the data access window. ISO 8601 date. |
+| `access_to`                | `string`         | End of the data access window. ISO 8601 date. |
+| `show_consent_explanation` | `boolean`        | Show an explanation screen before the customer grants consent. |
+| `success_redirect_url`     | `string`         | URL to redirect to on successful completion (Open Finance flows). |
+| `fail_redirect_url`        | `string`         | URL to redirect to on failure or cancellation (Open Finance flows). |
+| `destination_alias`        | `string`         | Display name for the payment destination shown in the UI. |
+| `destination_avatar`       | `string`         | Logo URL for the payment destination shown in the UI. PNG or JPG. |
+| `sandbox`                  | `boolean`        | Run against the Lean sandbox environment. |
+| `language`                 | `"en"` or `"ar"` | Force the SDK UI language. Arabic auto-applies RTL. |
+| `customization`            | `Customization`  | Theme and appearance overrides. See [Customization](#customization). |
+| `callback`                 | `(data: CallbackData) => void` | Called on SDK lifecycle events. See [Callback](#callback). |
 
 ---
 
@@ -117,12 +119,10 @@ The method validates the config, mounts a React app into `#lean-link`, and rende
 - `"scheduled_payments"`
 - `"direct_debits"`
 - `"standing_orders"`
-- 
 
 ### Payments
 
-- `"payments"` — request payment initiation capability.
-
+- `"payments"`: request payment initiation capability.
 
 Example:
 
@@ -134,7 +134,7 @@ permissions: ["identity", "accounts", "transactions", "balance", "payments"]
 
 ## Customization
 
-All fields are optional. Colour fields accept HEX (`#RRGGBB`), RGB (`rgb(r,g,b)`), or named CSS colours. The dialog background fields additionally accept CSS `linear-gradient(...)` values.
+All fields are optional. Colour fields accept HEX (`#RRGGBB`), RGB (`rgb(r,g,b)`), or a named CSS colour. The dialog-background fields also accept a CSS `linear-gradient(...)` value.
 
 ```ts
 {
@@ -167,7 +167,7 @@ customization: {
 
 ## Callback
 
-`callback` receives a partial `CallbackData` object — fields are only populated when relevant to the event:
+`callback` receives a partial `CallbackData` object. Only the fields relevant to the current event are populated:
 
 ```ts
 {
@@ -185,13 +185,13 @@ customization: {
 }
 ```
 
-The `status` values come from the `CloseType` enum:
+`status` comes from the `CloseType` enum:
 
-- `SUCCESS` — flow completed successfully.
-- `ERROR` — flow ended in error.
-- `CANCELLED` — customer closed the SDK before completion.
-- `REDIRECT` — flow handed control to an Open Finance redirect.
-- `LINK_CLOSED_PROGRAMMATICALLY` — the SDK was closed by host-page code.
+- `SUCCESS`: the flow completed.
+- `ERROR`: the flow ended in error.
+- `CANCELLED`: the customer closed the SDK before finishing.
+- `REDIRECT`: control handed off to an Open Finance redirect.
+- `LINK_CLOSED_PROGRAMMATICALLY`: host-page code closed the SDK.
 
 Example:
 
@@ -223,5 +223,5 @@ LeanV2.connect({
 
 ---
 
-## More details 
-[Public Lean Documentation](https://docs.leantech.me/docs/web)
+## More details
+- [Public Lean Documentation](https://docs.leantech.me/docs/web)

@@ -2,7 +2,7 @@
 
 A static HTML page that loads the Lean Link SDK (KSA environment) and launches the **`connect`** flow to link a customer's bank account with Lean.
 
-The SDK is shipped as a UMD bundle and attaches to the JavaScript global `window.LeanV2`.
+The SDK ships as a UMD bundle and attaches to the global `window.LeanV2`.
 
 ---
 
@@ -13,13 +13,13 @@ The SDK is shipped as a UMD bundle and attaches to the JavaScript global `window
 3. Click **Connect** to launch the SDK against the KSA environment.
 
 
-## Test users with Lean Mock Bank
+## Test users on Lean Mock Bank
 
-The Lean Mock Bank users mirror a realistic bank authentication and consent experience in the Sandbox environment. Use the credentials below to test Link SDK in your application. Go integration tab in [KSA Lean Dashboard](https://dev.sa.leantech.me/):
+The Lean Mock Bank gives you test customers you can use to walk through bank login and consent in Sandbox without touching a real bank. Grab a test user from the **Integration** tab of the [KSA Lean Dashboard](https://dev.sa.leantech.me/):
 
 ![lean-postman-configuration](/images/test_users.png)
 
-You can generate transactions for a test users by Clicking the "three dots" icon:
+To generate transactions for a test user, click the three-dots icon next to it:
 
 ![lean-postman-configuration](/images/test_users_generate_transactions.png)
 
@@ -59,7 +59,7 @@ You can generate transactions for a test users by Clicking the "three dots" icon
 </script>
 ```
 
-The mount point `<div id="lean-link"></div>` is **required** — the SDK looks up this element by id and renders its UI into it.
+The `<div id="lean-link"></div>` mount point is required. The SDK looks it up by id and renders into it; without it, nothing happens.
 
 ---
 
@@ -68,19 +68,15 @@ The mount point `<div id="lean-link"></div>` is **required** — the SDK looks u
 | Environment | URL |
 | ----------- | --- |
 | KSA Production | `https://cdn.leantech.me/link/sdk/web/v2/prod/sa/latest/Lean.min.js` |
-| KSA Sandbox    | Same bundle — pass `sandbox: true` in the config |
+| KSA Sandbox    | Same bundle. Pass `sandbox: true` in the config. |
 
 ---
 
 ## `connect` method
 
-`LeanV2.connect(config)` launches the Connect flow:
+`LeanV2.connect(config)` runs the Connect flow: the customer picks a bank, logs in with it, and grants the data or payments permissions you asked for.
 
-1. Customer selects a bank.
-2. Customer authenticates with the bank.
-3. Customer grants the requested data / payments permissions.
-
-The method validates the config, mounts a React app into `#lean-link`, and renders the flow. Validation errors only surface when `sandbox: true`; in production an invalid config silently aborts mounting.
+Under the hood the method validates the config, mounts a React app into `#lean-link`, and renders the flow. Validation errors only surface when `sandbox: true`. In production, an invalid config silently aborts the mount, so test in sandbox first.
 
 ### Required fields
 
@@ -89,21 +85,21 @@ The method validates the config, mounts a React app into `#lean-link`, and rende
 | `app_token`   | `string`       | Your Lean application token from the Lean dashboard. |
 | `customer_id` | `string`       | Unique identifier of the end customer in your system. |
 | `permissions` | `Permission[]` | Permissions to request. Must contain at least one value. See [Permissions](#permissions). |
-| `access_token`| `string`       | A valid Lean JWT with customer scope. When provided, the SDK skips its own auth step and uses this token as `Authorization: Bearer` on every API request. Must include an `exp` claim with at least **10 minutes** of remaining validity. |
-| `success_redirect_url`         | `string`  | URL to redirect to on successful completion. |
-| `fail_redirect_url`            | `string`  | URL to redirect to on failure / cancellation. |
-| `show_consent_explanation`     | `boolean` | Show an explanation screen before the customer grants consent. |
+| `access_token`| `string`       | A valid Lean JWT with customer scope. When provided, the SDK skips its own auth step and uses this token as the `Authorization: Bearer` header on every API request. The JWT must include an `exp` claim with at least **10 minutes** of remaining validity. |
+| `success_redirect_url`     | `string`  | URL to redirect to on successful completion. |
+| `fail_redirect_url`        | `string`  | URL to redirect to on failure or cancellation. |
+| `show_consent_explanation` | `boolean` | Show an explanation screen before the customer grants consent. |
 
 ### Optional fields
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `access_from`              | `string`         |(ISO 8601 date) Start of the data access window. |
-| `access_to`                | `string`         |(ISO 8601 date) End of the data access window. |
-| `sandbox`                  | `boolean`        | Run against the Lean sandbox environment. |
-| `language`                 | `"en"` or `"ar"` | Force the SDK UI language. Arabic auto-applies RTL. |
-| `customization`            | `Customization` | Theme / appearance overrides. See [Customization](#customization). |
-| `callback`                 | `(data: CallbackData) => void` | Invoked on SDK lifecycle events. See [Callback](#callback). |
+| `access_from`   | `string`         | Start of the data access window. ISO 8601 date. |
+| `access_to`     | `string`         | End of the data access window. ISO 8601 date. |
+| `sandbox`       | `boolean`        | Run against the Lean sandbox environment. |
+| `language`      | `"en"` or `"ar"` | Force the SDK UI language. Arabic auto-applies RTL. |
+| `customization` | `Customization`  | Theme and appearance overrides. See [Customization](#customization). |
+| `callback`      | `(data: CallbackData) => void` | Called on SDK lifecycle events. See [Callback](#callback). |
 
 ---
 
@@ -125,14 +121,14 @@ The method validates the config, mounts a React app into `#lean-link`, and rende
 Example:
 
 ```js
-permissions: ["accounts", "identity", , "transactions", "balance"]
+permissions: ["accounts", "identity", "transactions", "balance"]
 ```
 
 ---
 
 ## Customization
 
-All fields are optional. Colour fields accept HEX (`#RRGGBB`), RGB (`rgb(r,g,b)`), or named CSS colours. The dialog background fields additionally accept CSS `linear-gradient(...)` values.
+All fields are optional. Colour fields accept HEX (`#RRGGBB`), RGB (`rgb(r,g,b)`), or a named CSS colour. The dialog-background fields also accept a CSS `linear-gradient(...)` value.
 
 ```ts
 {
@@ -165,7 +161,7 @@ customization: {
 
 ## Callback
 
-`callback` receives a partial `CallbackData` object — fields are only populated when relevant to the event:
+`callback` receives a partial `CallbackData` object. Only the fields relevant to the current event are populated:
 
 ```ts
 {
@@ -183,13 +179,13 @@ customization: {
 }
 ```
 
-The `status` values come from the `CloseType` enum:
+`status` comes from the `CloseType` enum:
 
-- `SUCCESS` — flow completed successfully.
-- `ERROR` — flow ended in error.
-- `CANCELLED` — customer closed the SDK before completion.
-- `REDIRECT` — flow handed control to an Open Finance redirect.
-- `LINK_CLOSED_PROGRAMMATICALLY` — the SDK was closed by host-page code.
+- `SUCCESS`: the flow completed.
+- `ERROR`: the flow ended in error.
+- `CANCELLED`: the customer closed the SDK before finishing.
+- `REDIRECT`: control handed off to an Open Finance redirect.
+- `LINK_CLOSED_PROGRAMMATICALLY`: host-page code closed the SDK.
 
 Example:
 
@@ -221,5 +217,5 @@ LeanV2.connect({
 
 ---
 
-## More details 
-* [Public Lean Documentation](https://docs.leantech.me/v2.0-KSA/docs/web)
+## More details
+- [Public Lean Documentation](https://docs.leantech.me/v2.0-KSA/docs/web)
