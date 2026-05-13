@@ -9875,6 +9875,71 @@
                   ],
                   "cookie": [],
                   "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Verification temporarily disabled\",\n    \"timestamp\": \"2026-05-12T09:07:38.954182161Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"3904048a-f0a3-41af-a665-6c9c667315a3\",\n    \"status_detail\": {\n        \"granular_status_code\": \"DISABLED_BY_LEAN\",\n        \"status_additional_info\": \"Verification disabled for this bank\"\n    }\n}"
+                },
+                {
+                  "name": "AE (United Arab Emirates) - GIVEN_INPUT_CANNOT_BE_VERIFIED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"country_code\": \"AE\",\n    \"type\": \"PERSONAL\",\n    \"account_details\": {\n        \"type\": \"IBAN\",\n        \"value\": \"AE550030011666123450001\"\n    },\n    \"identifications\": [\n        {\n            \"type\": \"FULL_NAME\",\n            \"value\": \"INPUT CANNOT BE VERIFIED TEST\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/verifications/v1/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "verifications",
+                        "v1",
+                        "accounts"
+                      ]
+                    },
+                    "description": "Verifies account ownership for United Arab Emirates (AE). Uses sandbox test data from the Account Verification documentation. See https://docs.leantech.me/docs/how-to-use-account-verification-service"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 May 2026 04:32:13 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "lean-correlation-id",
+                      "value": "GbnCnUxQYpVtKwLs"
+                    },
+                    {
+                      "key": "lean-trace-id",
+                      "value": "7f4a8e15d3c7b2906a4f1d3e8c5b0a92"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": \"FAILED\",\n    \"message\": \"Account cannot be verified in this case. Please do not retry.\",\n    \"timestamp\": \"2026-05-13T04:32:13.841300255Z\",\n    \"meta\": null,\n    \"verifications\": null,\n    \"results_id\": \"56866954-5eed-4ced-a5d9-e2cdfdb6d90f\",\n    \"status_detail\": {\n        \"granular_status_code\": \"GIVEN_INPUT_CANNOT_BE_VERIFIED\",\n        \"status_additional_info\": \"Account cannot be verified in this case. Please do not retry.\"\n    }\n}"
                 }
               ]
             }
