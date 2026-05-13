@@ -138,54 +138,9 @@
           <button
             class="btn btn-lg btn-secondary"
             type="button"
-            onclick="link();"
-          >
-            Link
-          </button>
-        </p>
-        <p class="lead">
-          <button
-            class="btn btn-lg btn-secondary"
-            type="button"
             onclick="connect();"
           >
             Connect
-          </button>
-        </p>
-        <p class="lead">
-          <button
-            class="btn btn-lg btn-secondary"
-            type="button"
-            onclick="reconnect();"
-          >
-            Reconnect
-          </button>
-        </p>
-        <p class="lead">
-          <button
-            class="btn btn-lg btn-secondary"
-            type="button"
-            onclick="createPaymentSource();"
-          >
-            Create payment source
-          </button>
-        </p>
-        <p class="lead">
-          <button
-            class="btn btn-lg btn-secondary"
-            type="button"
-            onclick="updatePaymentSource();"
-          >
-            Update Payment Source
-          </button>
-        </p>
-        <p class="lead">
-          <button
-            class="btn btn-lg btn-secondary"
-            type="button"
-            onclick="pay();"
-          >
-            Initiate payment
           </button>
         </p>
       </main>
@@ -195,82 +150,33 @@
       </footer>
     </div>
 
-    <div id="lean-link"></div><script src="https://cdn.leantech.me/sa/link/sdk/web/latest/Lean.min.js"></script>
+    <div id="lean-link"></div><script src="https://cdn.leantech.me/link/sdk/web/v2/prod/sa/latest/Lean.min.js"></script>
     
   </body>
   <script>
 
-    const app_token= "9ac6a376-71cb-4412-9a6e-49e9fffdce04";
-    const customer_id= "5e6b6601-008d-4340-9a73-cf10e7609709";
+    // Please replace the following variables with your own values
+    const app_token= "";
+    const customer_id= "";
+    const customer_access_token ="";
 
     function cb(state) {
       console.log(state);
     }
 
-    function link() {
-      Lean.link({
-        app_token: "68d74086-3b41-4b9f-b873-029ed97ad7bb",
-        customer_id: "bfd88eb4-6c43-405a-ad83-87c2ff2926cb",
-        permissions: ["identity", "balance", "accounts", "transactions"],
-        sandbox: false,
-        fail_redirect_url : "https://www.google.com/search?q=failure",
-        success_redirect_url : "https://www.google.com/search?q=success",
-      });
-    }
-
     function connect() {
-      Lean.connect({
-        customer_id: "f4583c65-2df8-4b54-8871-ad4b5ad222af",
-        app_token: "4a37378f-f530-499f-978c-65767c68677d",
+      LeanV2.connect({
+        customer_id: customer_id,
+        app_token: app_token,
+        access_token:customer_access_token,
         permissions: ["identity", "balance", "accounts", "transactions"],
-        access_from: '2023-09-05',
-        access_to: '2023-12-09',
-        fail_redirect_url : "https://www.google.com/search?q=failure",
-        success_redirect_url : "https://www.google.com/search?q=success",
+        // access_from: '2023-09-05',
+        // access_to: '2023-12-09',
+      	success_redirect_url: "https://www.leantech.me/?success=true",
+        fail_redirect_url: "https://www.leantech.me/?success=false",
         sandbox: false,
-        //payment_destination_id: "7063b9bd-45ef-4e82-aa90-102801cde9a9",
-        bank_identifier: "ANB_SAU",
-        account_type: 'BUSINESS'
-      });
-    }
-
-    function reconnect() {
-      Lean.reconnect({
-        app_token,
-        reconnect_id: "3e628833-8656-4613-81df-fddcae1a89f1",
-        // show_logs: true,
-        sandbox: true,
-        callback: cb,
-      });
-    }
-
-    function createPaymentSource() {
-      Lean.createPaymentSource({
-        app_token,
-        customer_id,
-        sandbox: false,
-        payment_destination_id,
-        show_logs: true,
-      });
-    }
-
-    function updatePaymentSource() {
-      Lean.updatePaymentSource({
-        app_token,
-        customer_id,
-        payment_source_id: "7d01b45e-0a77-4e14-bb19-257072fe439f",
-        payment_destination_id: "0f6fe273-9218-4729-8762-6d8af2591ba3",
-        sandbox: true,
-        callback: cb,
-      });
-    }
-
-    function pay() {
-      Lean.pay({
-        app_token,
-        payment_intent_id: "0c62deb3-5737-4268-8bd4-d55d5d56e5b1",
-        sandbox: true,
-        callback: cb,
+        show_consent_explanation: true,
+         callback: cb,
       });
     }
   </script>

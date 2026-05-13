@@ -18,5 +18,8 @@ The Lean Postman collection uses [Postman Collection variables](https://learning
 
 - `client_id`: Your application ID - this can be retrieved from Lean Application Dashboard account.
 - `client_secret`: Your client secret - this can be retrieved once from Lean Application Dashboard. Note: subsequent retrievals will invalidate your existing client secret.
+The `client_id` and `client_secret` can be retreived under the `Integration` tab:
+
+![lean-postman-configuration](/images/lean_credentials.png)
 
 4. Save your changes and start making Lean API requests!
