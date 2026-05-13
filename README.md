@@ -1,7 +1,23 @@
 # Lean Postman Collections
 
-Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Lean API with no additional code, this is the place for you.
+Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Lean APIs with no additional code, this is the place for you.
 
+The repository ships two ready-to-use Postman collections, one per region:
+
+- `KSA/LeanAPI-KSA.postman_collection.json`
+- `UAE/Lean-API-UAE.postman_collection.json`
+
+### Importing a collection into Postman
+
+You can import either (or both) collections into your Postman workspace.
+
+1. In Postman desktop app or web app, click **Import** (top-left, next to the workspace name).
+2. Choose the **Files** tab and select the JSON collection file from your local clone of this repository, or paste a raw GitHub URL to the file under the **Link** tab.
+3. Click **Import** — Postman adds the collection to the current workspace.
+
+
+
+After importing, follow the **Configuration** section below to set the collection variables before sending requests.
 
 ### Configuration
 
