@@ -12024,9 +12024,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payment",
+                  "raw": "{{baseUrl}}/payouts/v1/payment",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12186,9 +12186,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payments?page_number=0&page_size=50",
+                  "raw": "{{baseUrl}}/payouts/v1/payments?page_number=0&page_size=50",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12350,9 +12350,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payments/{{payment_intent_id}}/history",
+                  "raw": "{{baseUrl}}/payouts/v1/payments/{{payment_intent_id}}/history",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12504,9 +12504,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/{{payment_id}}",
+                  "raw": "{{baseUrl}}/payouts/v1/{{payment_id}}",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12657,9 +12657,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/intents/{{payment_intent_id}}",
+                  "raw": "{{baseUrl}}/payouts/v1/intents/{{payment_intent_id}}",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12839,9 +12839,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payment/destinations",
+                  "raw": "{{baseUrl}}/payouts/v1/payment/destinations",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -13046,9 +13046,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/refunds?size=50",
+                  "raw": "{{baseUrl}}/payouts/refunds?size=50",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -13249,9 +13249,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/refunds",
+                  "raw": "{{baseUrl}}/payouts/refunds",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -13428,9 +13428,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/refunds",
+                  "raw": "{{baseUrl}}/payouts/refunds",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
