@@ -12474,17 +12474,17 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/payouts/v1/{{payment_id}}",
+              "raw": "{{baseUrl}}/payouts/v1/{{payout_id}}",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "payouts",
                 "v1",
-                "{{payment_id}}"
+                "{{payout_id}}"
               ]
             },
-            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/payment_id \\\n     --header 'accept: application/json'"
+            "description": "Generated from cURL: curl --request GET \\\n     --url https://api.leantech.me/payouts/v1/payout_id \\\n     --header 'accept: application/json'"
           },
           "response": [
             {
@@ -12504,14 +12504,14 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/{{payment_id}}",
+                  "raw": "{{sandbox_host}}/payouts/v1/{{payout_id}}",
                   "host": [
                     "{{sandbox_host}}"
                   ],
                   "path": [
                     "payouts",
                     "v1",
-                    "{{payment_id}}"
+                    "{{payout_id}}"
                   ]
                 }
               },
