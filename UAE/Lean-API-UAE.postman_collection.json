@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "89d2d320-b52a-4407-a6fb-7653e114c537",
+    "_postman_id": "8038eadc-7f9d-463c-aa00-6f5365aa88cd",
     "name": "Lean API - UAE",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "32824512"
+    "_exporter_id": "33523157"
   },
   "item": [
     {
@@ -506,7 +506,7 @@
               },
               "status": "Conflict",
               "code": 409,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -7050,7 +7050,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": null,
+              "_postman_previewlanguage": "Text",
               "header": [
                 {
                   "key": ":status",
@@ -12024,9 +12024,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payment",
+                  "raw": "{{baseUrl}}/payouts/v1/payment",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12186,9 +12186,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payments?page_number=0&page_size=50",
+                  "raw": "{{baseUrl}}/payouts/v1/payments?page_number=0&page_size=50",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12350,9 +12350,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payments/{{payment_intent_id}}/history",
+                  "raw": "{{baseUrl}}/payouts/v1/payments/{{payment_intent_id}}/history",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12504,9 +12504,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/{{payment_id}}",
+                  "raw": "{{baseUrl}}/payouts/v1/{{payment_id}}",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12657,9 +12657,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/intents/{{payment_intent_id}}",
+                  "raw": "{{baseUrl}}/payouts/v1/intents/{{payment_intent_id}}",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12839,9 +12839,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/v1/payment/destinations",
+                  "raw": "{{baseUrl}}/payouts/v1/payment/destinations",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -12962,9 +12962,9 @@
               }
             ],
             "url": {
-              "raw": "{{sandbox_host}}/payouts/v1/payment/destinations/{{destination_id}}",
+              "raw": "{{baseUrl}}/payouts/v1/payment/destinations/{{destination_id}}",
               "host": [
-                "{{sandbox_host}}"
+                "{{baseUrl}}"
               ],
               "path": [
                 "payouts",
@@ -13046,9 +13046,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/refunds?size=50",
+                  "raw": "{{baseUrl}}/payouts/refunds?size=50",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -13249,9 +13249,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/refunds",
+                  "raw": "{{baseUrl}}/payouts/refunds",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -13428,9 +13428,9 @@
                   }
                 },
                 "url": {
-                  "raw": "{{sandbox_host}}/payouts/refunds",
+                  "raw": "{{baseUrl}}/payouts/refunds",
                   "host": [
-                    "{{sandbox_host}}"
+                    "{{baseUrl}}"
                   ],
                   "path": [
                     "payouts",
@@ -13603,11 +13603,11 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://sandbox.sa.leantech.me"
+      "value": "https://sandbox.leantech.me"
     },
     {
       "key": "auth_baseUrl",
-      "value": "https://auth.sandbox.sa.leantech.me"
+      "value": "https://auth.sandbox.leantech.me"
     },
     {
       "key": "client_id",
