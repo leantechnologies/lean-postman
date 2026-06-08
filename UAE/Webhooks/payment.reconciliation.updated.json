@@ -1,0 +1,25 @@
+{
+  "id": "8a12f6b4-1451-44ab-a0be-f6d13222346e",
+  "webhook_message_id": "7a141b6e-d6de-47f5-b938-56a4107a29b1",
+  "status": "OK",
+  "event_type": "payment.reconciliation.updated",
+  "timestamp": "2026-04-29T08:44:41.815218Z",
+  "request": {
+    "type": "payment.reconciliation.updated",
+    "message": "A payment's reconciliation object has been updated.",
+    "payload": {
+      "amount": 12.12,
+      "status": "RECONCILED",
+      "currency": "AED",
+      "reference": "payment-516c93c1-6b62-4d06-ad3b-c8d8c618d1cc",
+      "consent_id": null,
+      "payment_id": "1c53cbc1-9f22-49c5-8d96-96655e33974a",
+      "payment_intent_id": "20db405b-7f71-4758-ab06-2dbb77015860",
+      "additional_property": null,
+      "payment_description": "LOR ABB Again"
+    },
+    "event_id": "7a141b6e-d6de-47f5-b938-56a4107a29b1",
+    "timestamp": "2026-04-29T08:44:41.775594843Z"
+  },
+  "response": null
+}
