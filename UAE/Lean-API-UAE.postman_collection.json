@@ -13564,6 +13564,75 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "Reconciliation",
+      "item": [
+        {
+          "name": "Get Deposits",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/reconciliation/v1/deposits?start_date=2025-05-28&end_date=2026-05-28&page=0&size=50&reconciliation_status=RECONCILED&local_timezone=Asia/Dubai",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reconciliation",
+                "v1",
+                "deposits"
+              ],
+              "query": [
+                {
+                  "key": "start_date",
+                  "value": "2025-05-28",
+                  "description": "Start date for the deposit query (YYYY-MM-DD)"
+                },
+                {
+                  "key": "end_date",
+                  "value": "2026-05-28",
+                  "description": "End date for the deposit query (YYYY-MM-DD)"
+                },
+                {
+                  "key": "page",
+                  "value": "0",
+                  "description": "Page number (zero-based)"
+                },
+                {
+                  "key": "size",
+                  "value": "50",
+                  "description": "Number of results per page"
+                },
+                {
+                  "key": "reconciliation_status",
+                  "value": "RECONCILED",
+                  "description": "Filter by reconciliation status (RECONCILED or NOT_RECONCILED)"
+                },
+                {
+                  "key": "local_timezone",
+                  "value": "Asia/Dubai",
+                  "description": "Timezone for local_timezone field. Always Continent/City pair (default: Asia/Dubai)"
+                },
+                {
+                  "key": "deposit_source_id",
+                  "value": "",
+                  "description": "Filter by deposit source ID",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Retrieve deposits for reconciliation. Requires `start_date` and `end_date` query parameters. Optionally filter by `reconciliation_status`, `deposit_source_id`, `timezone`, and paginate with `page` and `size`."
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "auth": {
